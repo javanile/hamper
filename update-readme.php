@@ -14,7 +14,10 @@ foreach (get_class_methods(HamperDatabase::class) as $method) {
         $docBlock = $docBlockFactory ->create($reflection->getDocComment());
         $summary = trim($docBlock->getSummary(), '.');
         $description = $docBlock->getDescription();
-        $documentation .= '### '. $summary. '`$hdb->' . $method . '(...)` - ' . "\n\n" . $description . "\n\n";
+        $documentation .=
+            '### ' . $summary . "\n\n" .
+            '`$hdb->' . $method . '(...)`' . "\n\n" .
+            $description . "\n\n";
     } catch (ReflectionException $exception) {
         echo $exception->getMessage()."\n";
         exit(1);

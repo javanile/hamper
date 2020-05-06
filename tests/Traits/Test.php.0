@@ -1,0 +1,22 @@
+<?php
+
+use Javanile\Hamper\Hamper;
+
+
+
+
+
+$row = Hamper::fetch($sql);
+
+
+var_dump($row);
+
+$rows = Hamper::fetchAll($sql);
+var_dump($rows);
+
+$adb = Hamper::getDatabase();
+
+$hdb->insert('vtiger_table_name', [
+    'field1' => 'value1',
+]);
+

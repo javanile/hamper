@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  vtiger:
+    image: javanile/vtiger:${version}
+    environment:
+      - VT_ENV=dev
+      - VT_DEBUG=false
+      - MYSQL_HOST=mysql
+      - MYSQL_DATABASE=vtiger
+      - MYSQL_ROOT_PASSWORD=secret
+    volumes:
+      - .:/app
+      - vtiger:/var/lib/vtiger
+    ports:
+      - 38080:80
+    links:
+      - mysql
+      - adminer
+
+  mysql:
+    image: mysql:5.7.28
+    command: --sql-mode= --character-set-server=utf8 --collation-server=utf8_general_ci
+    environment:
+      - MYSQL_DATABASE=vtiger
+      - MYSQL_ROOT_PASSWORD=secret
+    volumes:
+      - mysql:/var/lib/mysql:rw
+
+  adminer:
+    image: javanile/adminer
+    environment:
+      - MYSQL_DATABASE=vtiger
+      - MYSQL_ROOT_PASSWORD=secret
+
+volumes:
+  mysql:
+  vtiger:

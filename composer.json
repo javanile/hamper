@@ -1,0 +1,20 @@
+{
+    "autoload": {
+        "psr-4": {
+            "Javanile\\Hamper\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Javanile\\Hamper\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^7.0"
+    },
+    "require-dev": {
+        "javanile/vtiger-core": "7.1.0",
+        "phpunit/phpunit": "^6.5",
+        "phpdocumentor/reflection-docblock": "^5.1"
+    }
+}

@@ -41,7 +41,7 @@ class HamperDatabase extends PearDatabaseDecorator
     /**
      *
      */
-    public function create($table, $data)
+    public function update($table, $data)
     {
 
     }

@@ -20,31 +20,45 @@ Head over to [the full documentation](https://docs.spatie.be/image).
 
 ## Documentation
 
-### Execute a query`$hdb->query(...)` - 
+### Execute a query
+
+`$hdb->query(...)`
 
 
 
-### `$hdb->fetch(...)` - 
+### 
+
+`$hdb->fetch(...)`
 
 
 
-### `$hdb->fetchAll(...)` - 
+### 
+
+`$hdb->fetchAll(...)`
 
 
 
-### `$hdb->insert(...)` - 
+### 
+
+`$hdb->insert(...)`
 
 
 
-### `$hdb->create(...)` - 
+### 
+
+`$hdb->create(...)`
 
 
 
-### `$hdb->delete(...)` - 
+### 
+
+`$hdb->delete(...)`
 
 
 
-### Database constructor`$hdb->__construct(...)` - 
+### Database constructor
+
+`$hdb->__construct(...)`
 
 
 

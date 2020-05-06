@@ -20,7 +20,7 @@ Head over to [the full documentation](https://docs.spatie.be/image).
 
 ## Documentation
 
-### Execute a query
+### Execute query
 
 `$hdb->query(...)`
 
@@ -46,7 +46,7 @@ Head over to [the full documentation](https://docs.spatie.be/image).
 
 ### 
 
-`$hdb->create(...)`
+`$hdb->update(...)`
 
 
 

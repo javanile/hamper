@@ -18,6 +18,9 @@ foreach (get_class_methods(HamperDatabase::class) as $method) {
             '### ' . $summary . "\n\n" .
             '`$hdb->' . $method . '(...)`' . "\n\n" .
             $description . "\n\n";
+        foreach ($docBlock->getTags() as $tag) {
+            var_dump($tag);
+        }
     } catch (ReflectionException $exception) {
         echo $exception->getMessage()."\n";
         exit(1);

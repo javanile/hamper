@@ -52,7 +52,7 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
-     * Fetch records list.
+     * Fetch record list.
      */
     public function fetchAll($sql)
     {

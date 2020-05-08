@@ -20,14 +20,14 @@ Head over to [the full documentation](https://docs.spatie.be/image).
 
 ## Documentation
 
-1. [Data manipulation](#Data manipulation)
-    1. [Execute query](#Execute query)
+1. [Data manipulation](#Data-manipulation)
+    1. [Execute query](#Execute-query)
     1. [](#)
     1. [](#)
     1. [](#)
     1. [](#)
     1. [](#)
-1. [Tables manipulation](#Tables manipulation)
+1. [Tables manipulation](#Tables-manipulation)
     1. [](#)
 
 

@@ -8,6 +8,22 @@ use SebastianBergmann\Environment\OperatingSystemTest;
 class HamperDatabase extends PearDatabaseDecorator
 {
     /**
+     *
+     */
+    public $tables;
+
+    /**
+     * HamperDatabase constructor.
+     * @param $pearDatabase
+     */
+    public function __construct($pearDatabase)
+    {
+        parent::__construct($pearDatabase);
+
+        $this->tables = new HamperDatabaseTables($pearDatabase);
+    }
+
+    /**
      * Execute query.
      *
      * @usage $hdb->query($sql, $values)

@@ -20,45 +20,58 @@ Head over to [the full documentation](https://docs.spatie.be/image).
 
 ## Documentation
 
-### Execute query
+1. [Data manipulation](#)
+    1. [Execute query](#)
+    1. [](#)
+    1. [](#)
+    1. [](#)
+    1. [](#)
+    1. [](#)
+1. [Tables manipulation](#)
+    1. [](#)
+
+
+### Data manipulation
+#### Execute query
 
 `$hdb->query(...)`
 
 
 
-### 
+#### 
 
 `$hdb->fetch(...)`
 
 
 
-### 
+#### 
 
 `$hdb->fetchAll(...)`
 
 
 
-### 
+#### 
 
 `$hdb->insert(...)`
 
 
 
-### 
+#### 
 
 `$hdb->update(...)`
 
 
 
-### 
+#### 
 
 `$hdb->delete(...)`
 
 
 
-### Database constructor
+### Tables manipulation
+#### 
 
-`$hdb->__construct(...)`
+`$hdb->create(...)`
 
 
 

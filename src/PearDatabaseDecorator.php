@@ -12,11 +12,6 @@ class PearDatabaseDecorator
     protected $pearDatabase;
 
     /**
-     *
-     */
-    public $tables;
-
-    /**
      * Database constructor.
      *
      * @param PearDatabase $pearDatabase

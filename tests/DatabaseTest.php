@@ -8,7 +8,10 @@ class DatabaseTest extends TestCase
 {
     public function testInfo()
     {
-        $adb = \PearDatabase::getInstance();
+        $hdb = Hamper::getInstance();
+
+        $hdb->fecth("SQL asdasd");
+
         $this->assertEquals("A", "A");
     }
 }

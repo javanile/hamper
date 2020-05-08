@@ -35,6 +35,7 @@ foreach ($sections as $class => $title) {
             foreach ($docBlock->getTags() as $tag) {
                 //var_dump($tag);
             }
+            $documentation .= '[Back to top](#Documentation)';
         } catch (ReflectionException $exception) {
             echo $exception->getMessage()."\n";
             exit(1);

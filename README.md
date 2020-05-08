@@ -40,37 +40,49 @@ $hdb = Hamper::getInstance();
 
 
 
-[Back to top](#Documentation)#### Fetch one record
+[Back to top](#Documentation)
+
+#### Fetch one record
 
 `$hdb->fetch(...)`
 
 
 
-[Back to top](#Documentation)#### Fetch records list
+[Back to top](#Documentation)
+
+#### Fetch records list
 
 `$hdb->fetchAll(...)`
 
 
 
-[Back to top](#Documentation)#### Insert one record
+[Back to top](#Documentation)
+
+#### Insert one record
 
 `$hdb->insert(...)`
 
 
 
-[Back to top](#Documentation)#### Update one record
+[Back to top](#Documentation)
+
+#### Update one record
 
 `$hdb->update(...)`
 
 
 
-[Back to top](#Documentation)#### Delete one record
+[Back to top](#Documentation)
+
+#### Delete one record
 
 `$hdb->delete(...)`
 
 
 
-[Back to top](#Documentation)### Tables manipulation
+[Back to top](#Documentation)
+
+### Tables manipulation
 #### 
 
 `$hdb->create(...)`
@@ -78,6 +90,8 @@ $hdb = Hamper::getInstance();
 
 
 [Back to top](#Documentation)
+
+
 
 ## Changelog
 

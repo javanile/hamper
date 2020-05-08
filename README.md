@@ -40,7 +40,7 @@ $hdb = Hamper::getInstance();
 
 
 
-[Back to top](#Documentation)
+[[back to top]](#Documentation)
 
 #### Fetch one record
 
@@ -48,7 +48,7 @@ $hdb = Hamper::getInstance();
 
 
 
-[Back to top](#Documentation)
+[[back to top]](#Documentation)
 
 #### Fetch records list
 
@@ -56,7 +56,7 @@ $hdb = Hamper::getInstance();
 
 
 
-[Back to top](#Documentation)
+[[back to top]](#Documentation)
 
 #### Insert one record
 
@@ -64,7 +64,7 @@ $hdb = Hamper::getInstance();
 
 
 
-[Back to top](#Documentation)
+[[back to top]](#Documentation)
 
 #### Update one record
 
@@ -72,7 +72,7 @@ $hdb = Hamper::getInstance();
 
 
 
-[Back to top](#Documentation)
+[[back to top]](#Documentation)
 
 #### Delete one record
 
@@ -80,7 +80,7 @@ $hdb = Hamper::getInstance();
 
 
 
-[Back to top](#Documentation)
+[[back to top]](#Documentation)
 
 ### Tables manipulation
 #### 
@@ -89,7 +89,7 @@ $hdb = Hamper::getInstance();
 
 
 
-[Back to top](#Documentation)
+[[back to top]](#Documentation)
 
 
 

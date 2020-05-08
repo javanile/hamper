@@ -7,3 +7,8 @@ dump-autoload:
 	docker run --rm -v $${PWD}:/app -u $$(id -u) composer dump-autoload
 update-readme:
 	docker run --rm -v $${PWD}:/app -u $$(id -u) php -f /app/update-readme.php
+
+release: update-readme
+	git add .
+	git commit -am "release"
+	git push

@@ -106,10 +106,10 @@ If you discover any security related issues, please email bianco@javanile.org in
 
 ## Socialware
 
-You're free to use this package, we highly appreciate if you create a social post on facebook or twitter with following hashtag:
+We highly appreciate if you create a social post on facebook or twitter with following hashtag:
 
-- #javanile
-- #hamper
+- [#javanile](#Socialware)
+- [#hamper](#Socialware)
 
 ## Credits
 
@@ -122,7 +122,6 @@ Javanile is a community project agency based in Sicily, Italy.
 You'll find an overview of all our projects [on our website](https://www.javanile.org).
 
 Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/javanile). 
-All pledges will be dedicated to allocating workforce on maintenance and new awesome stuff.
 
 ## License
 

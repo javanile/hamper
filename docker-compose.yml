@@ -12,6 +12,8 @@ services:
     volumes:
       - .:/app
       - vtiger:/var/lib/vtiger
+      - ./tests/logs:/var/lib/vtiger/logs
+      - ./vendor/javanile/vtiger-core/include/database:/var/www/html/include/database
     ports:
       - 38080:80
     links:

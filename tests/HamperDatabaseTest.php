@@ -11,10 +11,10 @@ class HamperDatabaseTest extends TestCase
     {
         $hdb = Hamper::getInstance();
 
-        //$sql = "CREATE TABLE IF NOT EXISTS test (test TEXT) ENGINE=INNODB";
-        //$res = $hdb->query($sql);
+        $sql = "CREATE TABLE IF NOT EXISTS test (test TEXT) ENGINE=INNODB";
 
-        //var_dump($res);
+        $res = $hdb->query($sql);
+
 
         /*
         $rows = Hamper::fetchAll($sql);

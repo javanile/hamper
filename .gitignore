@@ -3,3 +3,5 @@
 vendor/
 .env
 vtiger.json
+tests/logs/
+!tests/logs/.gitkeep

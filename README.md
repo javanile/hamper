@@ -1,22 +1,24 @@
 # hamper
 
-You'll find more examples in [the full documentation](https://docs.spatie.be/image).
-
-Under the hood [Glide](http://glide.thephpleague.com/) by [Jonathan Reinink](https://twitter.com/reinink) is used.
+Developer friendly database library for vtiger
 
 ## Installation
 
 You can install the package via composer:
 
-``` bash
-composer require spatie/image
+```bash
+composer require javanile/hamper
 ```
-
-Please note that since version 1.5.3 this package requires exif extension to be enabled: http://php.net/manual/en/exif.installation.php
 
 ## Usage
 
-Head over to [the full documentation](https://docs.spatie.be/image).
+You simply get your `$hdb` object to access on database
+
+```php
+use Javanile\Hamper\Hamper;
+
+$hdb = Hamper::getInstance();
+```
 
 ## Documentation
 
@@ -87,56 +89,42 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 composer test
 ```
 
+docker-compose up -d
+docker-compose exec vtiger ./vendor/bin/phpunit tests/DatabaseTest.php
+
+```php
+$hdb->$hdb->tables->create();
+```
+
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Security
 
-If you discover any security related issues, please email freek@spatie.be instead of using the issue tracker.
+If you discover any security related issues, please email bianco@javanile.org instead of using the issue tracker.
 
-## Postcardware
+## Socialware
 
-You're free to use this package, but if it makes it to your production environment we highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using.
+You're free to use this package, but if it makes it to your production environment 
+we highly appreciate you create a social post on facebook or twitter with following hashtag.
 
-Our address is: Spatie, Samberstraat 69D, 2060 Antwerp, Belgium.
-
-We publish all received postcards [on our company website](https://spatie.be/en/opensource/postcards).
+- #javanile
+- #hamper
 
 ## Credits
 
-- [Freek Van der Herten](https://github.com/freekmurze)
-- [All Contributors](../../contributors)
-
-Under the hood [Glide](http://glide.thephpleague.com/) by [Jonathan Reinink](https://twitter.com/reinink) is used. We've based our documentation and docblocks on text found in [the Glide documentation](http://glide.thephpleague.com/)
+- [Francesco Bianco](https://github.com/francescobianco)
+- [All Contributors](../../contributors) 
 
 ## Support us
 
-Spatie is a webdesign agency based in Antwerp, Belgium. You'll find an overview of all our open source projects [on our website](https://spatie.be/opensource).
+Javanile is a community project agency based in Sicily, Italy. 
+You'll find an overview of all our open source projects [on our website](https://www.javanile.org).
 
-Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/spatie). 
+Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/javanile). 
 All pledges will be dedicated to allocating workforce on maintenance and new awesome stuff.
 
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-
-## 
-
-
-
-docker-compose up -d
-docker-compose exec vtiger ./vendor/bin/phpunit tests/DatabaseTest.php
-
-```php
-$hdb->
-
-$hdb->tables->create();
-
-
-
-
-
-```
-

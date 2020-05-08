@@ -44,7 +44,7 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
-     *
+     * Fetch one record.
      */
     public function fetch($sql)
     {
@@ -52,7 +52,7 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
-     *
+     * Fetch records list.
      */
     public function fetchAll($sql)
     {
@@ -60,7 +60,7 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
-     *
+     * Insert one record.
      */
     public function insert($table, $data)
     {
@@ -68,7 +68,7 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
-     *
+     * Update one record.
      */
     public function update($table, $data)
     {
@@ -76,7 +76,7 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
-     *
+     * Delete one record.
      */
     public function delete($table, $data)
     {

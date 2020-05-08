@@ -24,11 +24,11 @@ $hdb = Hamper::getInstance();
 
 1. [Data manipulation](#Data-manipulation)
     1. [Execute query](#Execute-query)
-    1. [](#)
-    1. [](#)
-    1. [](#)
-    1. [](#)
-    1. [](#)
+    1. [Fetch one record](#Fetch-one-record)
+    1. [Fetch records list](#Fetch-records-list)
+    1. [Insert one record](#Insert-one-record)
+    1. [Update one record](#Update-one-record)
+    1. [Delete one record](#Delete-one-record)
 1. [Tables manipulation](#Tables-manipulation)
     1. [](#)
 
@@ -40,31 +40,31 @@ $hdb = Hamper::getInstance();
 
 
 
-#### 
+#### Fetch one record
 
 `$hdb->fetch(...)`
 
 
 
-#### 
+#### Fetch records list
 
 `$hdb->fetchAll(...)`
 
 
 
-#### 
+#### Insert one record
 
 `$hdb->insert(...)`
 
 
 
-#### 
+#### Update one record
 
 `$hdb->update(...)`
 
 
 
-#### 
+#### Delete one record
 
 `$hdb->delete(...)`
 

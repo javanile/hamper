@@ -1,14 +1,25 @@
 
+.PHONY: test
+
+init:
+	echo "version=7.1.0" > .env
+install-composer:
+	docker-compose run --rm vtiger curl -sS https://getcomposer.org/installer -o ./scripts/composer-installer.php
+	docker-compose run --rm vtiger php ./scripts/composer-installer.php -- --install-dir=./scripts --filename=composer
+install: init
+	docker-compose run --rm -u $$(id -u) vtiger php ./scripts/composer install
 update:
-	docker run --rm -v $${PWD}:/app -u $$(id -u) composer update $(take)
+	docker-compose run --rm vtiger php ./scripts/composer update $(take)
 require:
-	docker run --rm -v $${PWD}:/app -u $$(id -u) composer require $(take)
+	docker-compose run --rm vtiger php ./scripts/composer require $(take)
 dump-autoload:
-	docker run --rm -v $${PWD}:/app -u $$(id -u) composer dump-autoload
+	docker-compose run --rm vtiger php ./scripts/composer dump-autoload
 update-readme:
-	docker run --rm -v $${PWD}:/app -u $$(id -u) php -f /app/scripts/update-readme.php
+	docker-compose run --rm vtiger php ./scripts/update-readme.php
 test:
 	./scripts/test-runner.sh
+tdd:
+	docker-compose run --rm vtiger ./vendor/bin/phpunit --stop-on-failure $(take)
 release: update-readme
 	git add .
 	git commit -am "release"

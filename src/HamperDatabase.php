@@ -3,7 +3,6 @@
 namespace Javanile\Hamper;
 
 use Javanile\Hamper\PearDatabaseDecorator;
-use SebastianBergmann\Environment\OperatingSystemTest;
 
 class HamperDatabase extends PearDatabaseDecorator
 {
@@ -48,7 +47,7 @@ class HamperDatabase extends PearDatabaseDecorator
      */
     public function fetch($sql)
     {
-
+        $this->pearDatabase->getOne($sql);
     }
 
     /**

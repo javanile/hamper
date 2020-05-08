@@ -5,23 +5,18 @@ namespace Javanile\Hamper\Tests;
 use Javanile\Hamper\Hamper;
 use PHPUnit\Framework\TestCase;
 
-class DatabaseTest extends TestCase
+class HamperDatabaseTest extends TestCase
 {
-    public function testInfo()
+    public function testQuery()
     {
         $hdb = Hamper::getInstance();
 
+        //$sql = "CREATE TABLE IF NOT EXISTS test (test TEXT) ENGINE=INNODB";
+        //$res = $hdb->query($sql);
 
+        //var_dump($res);
 
-
-
-
-
-        $row = Hamper::fetch($sql);
-
-
-        var_dump($row);
-
+        /*
         $rows = Hamper::fetchAll($sql);
         var_dump($rows);
 
@@ -35,6 +30,8 @@ class DatabaseTest extends TestCase
 
         $hdb->fecth("SQL asdasd");
 
+        $this->assertEquals("A", "A");
+        */
         $this->assertEquals("A", "A");
     }
 }

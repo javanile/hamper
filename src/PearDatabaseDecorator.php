@@ -7,7 +7,7 @@ use PearDatabase;
 class PearDatabaseDecorator
 {
     /**
-     *
+     * @var PearDatabase
      */
     protected $pearDatabase;
 

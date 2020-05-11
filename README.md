@@ -34,9 +34,16 @@ $hdb = Hamper::getInstance();
 
 
 ### Data manipulation
+
 #### Execute query
 
+asdkljalsd askdjalòskdjasld aksdjalskdja dasdkjasldkjasd as dalksdjalòskdj
+
 `$hdb->query(...)`
+
+###### Samples
+asdasdasd
+adasdasd
 
 
 

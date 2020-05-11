@@ -23,7 +23,7 @@ class HamperDatabaseTest extends TestCase
             $sql = "INSERT INTO test (field1, field2) VALUES (?, ?)";
             $res = $hdb->query($sql, [$key, $key]);
 
-            $sql = "SELECT * FROM test WHERE field1 = ?)";
+            $sql = "SELECT * FROM test WHERE field1 = ?";
             $row = $hdb->fetch($sql, [$key], ['dieOnError' => true]);
         } catch (HamperException $exception) {
             var_dump($exception->getMessage());

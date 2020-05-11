@@ -55,9 +55,9 @@ class HamperDatabase extends PearDatabaseDecorator
     public function fetch($sql, $params = [], $options = [])
     {
         $handler = OptionsHandlerFactory::createInstance($options);
-        $row = $this->pearDatabase->getOne($sql, $handler->dieOnError, $handler->message);
+        $results = $this->pearDatabase->pquery($sql, $params, $handler->dieOnError, $handler->message);
 
-        var_dump($row);
+        $row = $this->pearDatabase->query_result_rowdata($results, 0);
 
         return $row;
     }

@@ -27,7 +27,7 @@ $hdb = Hamper::getInstance();
     1. [Fetch one record](#Fetch-one-record)
     1. [Fetch record list](#Fetch-record-list)
     1. [Insert one record](#Insert-one-record)
-    1. [Update one record](#Update-one-record)
+    1. [Update one record CIAO](#Update-one-record-CIAO)
     1. [Delete one record](#Delete-one-record)
 1. [Tables manipulation](#Tables-manipulation)
     1. [Create new table](#Create-new-table)
@@ -66,7 +66,7 @@ $hdb = Hamper::getInstance();
 
 [[back to top]](#Documentation)
 
-#### Update one record
+#### Update one record CIAO
 
 `$hdb->update(...)`
 

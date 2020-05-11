@@ -32,9 +32,11 @@ class HamperDatabase extends PearDatabaseDecorator
      * @param array $options
      *
      * @throws HamperException
-     * @example asd
-     *          dsa
-     *          asd
+     * @example $hdb->asdasdas
+     *          asdasd
+     *              asd
+     *              asdasd
+     *          asdasd
      *          dsa
      */
     public function query($sql, $params = [], $options = [])
@@ -75,11 +77,30 @@ class HamperDatabase extends PearDatabaseDecorator
      */
     public function insert($table, $data)
     {
+        /*
+        $table= 'vtiger_suite_maiolscanner_account'
+        $data = [
+            'field_1' => 'value_1',
+            'field_2' => 'value_2',
+            .
+            .
+            .
+        ]
+        $flatData = ['field_1', 'field_', ..., 'value_1', 'value_2']
+
+        $flatData = array_merge(array_keys($data), array_values($data));
+
+        $sql = "INSER INTO $nometabella (?, ?, ...?) VALUES (?, ?, ...?)"
+        $PDB->pquery($sql, )
+        */
+
+
+
 
     }
 
     /**
-     * Update one record.
+     * Update one record CIAO.
      */
     public function update($table, $data)
     {

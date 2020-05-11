@@ -30,6 +30,8 @@ class HamperDatabaseTest extends TestCase
             exit(1);
         }
 
+        var_dump($row);
+
         $this->assertEquals($key, $row['field2']);
     }
 }

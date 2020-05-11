@@ -31,6 +31,7 @@ class HamperDatabase extends PearDatabaseDecorator
      * @param array $params
      * @param array $options
      *
+     * @throws HamperException
      * @example asd
      *          dsa
      *          asd
@@ -39,15 +40,26 @@ class HamperDatabase extends PearDatabaseDecorator
     public function query($sql, $params = [], $options = [])
     {
         $handler = OptionsHandlerFactory::createInstance($options);
-        return $this->pearDatabase->pquery($sql, $params, $handler->dieOnError, $handler->message);
+        $results = $this->pearDatabase->pquery($sql, $params, $handler->dieOnError, $handler->message);
+
+        #if (!$results) {
+        #    throw new HamperException();
+        #}
+
+        return $results;
     }
 
     /**
      * Fetch one record.
      */
-    public function fetch($sql)
+    public function fetch($sql, $params = [], $options = [])
     {
-        $this->pearDatabase->getOne($sql);
+        $handler = OptionsHandlerFactory::createInstance($options);
+        $row = $this->pearDatabase->getOne($sql, $handler->dieOnError, $handler->message);
+
+        var_dump($row);
+
+        return $row;
     }
 
     /**

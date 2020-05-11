@@ -16,9 +16,11 @@ dump-autoload:
 	docker-compose run --rm vtiger php ./scripts/composer dump-autoload
 update-readme:
 	docker-compose run --rm vtiger php ./scripts/update-readme.php
+up:
+	docker-compose up -d
 test:
 	./scripts/test-runner.sh
-tdd:
+tdd: up
 	docker-compose run --rm vtiger ./vendor/bin/phpunit --stop-on-failure $(take)
 release: update-readme
 	git add .

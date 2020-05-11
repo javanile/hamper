@@ -99,15 +99,12 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 
 ## Testing
 
-``` bash
-composer test
+```bash
+$ make install
 ```
 
-docker-compose up -d
-docker-compose exec vtiger ./vendor/bin/phpunit tests/DatabaseTest.php
-
-```php
-$hdb->$hdb->tables->create();
+```bash
+$ make tdd take=tests/HamperDatabaseTest.php 
 ```
 
 ## Contributing

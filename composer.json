@@ -14,6 +14,7 @@
     },
     "require-dev": {
         "javanile/vtiger-core": "7.1.0",
+        "javanile/php-global-var": "*",
         "phpunit/phpunit": "^6.5",
         "phpdocumentor/reflection-docblock": "^4.3"
     }

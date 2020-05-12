@@ -38,7 +38,7 @@ class HamperDatabase extends PearDatabaseDecorator
         $this->tables = new HamperDatabaseTables($pearDatabase);
     }
 
-    /**
+    /*
      * Executes the given parametric query.
      *
      * @usage $hdb->query($sql, $values)
@@ -100,15 +100,14 @@ class HamperDatabase extends PearDatabaseDecorator
         $handler = OptionsHandlerFactory::createInstance($options);
         $results = $this->pearDatabase->pquery($sql, $params, $handler->dieOnError, $handler->message);
 
-        var_dump($results);
+        //var_dump($results);
         if ($results != null)
         {
             $rows = [];
-            $rowNumber = 0;
-            foreach ($results['fields'] as $result)
+
+            for($rowIndex = 0;$rowIndex < $this->pearDatabase->num_rows($results); $rowIndex++)
             {
-                $rows[] = $this->pearDatabase->query_result($result, $rowNumber);
-                $rowNumber++;
+                $rows[$rowIndex] = $this->pearDatabase->query_result_rowdata($results, $rowIndex);
             }
             return $rows;
         }

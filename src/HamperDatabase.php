@@ -120,9 +120,8 @@ class HamperDatabase extends PearDatabaseDecorator
      * @param string $table The table's name on which the insert has to be executed.
      * @param mixed $data The data to be inserted into the selected table, in the form of $data = ['field_1' => 'value_1','field_2' => 'value_2'].
      * @param array $options Any additional option needed.
-     *
      */
-    public function insert($table, $data, $options = [])
+    public function insert($table, $data, $options=[])
     {
         /*
         $table= 'vtiger_suite_mailscanner_account'
@@ -145,13 +144,14 @@ class HamperDatabase extends PearDatabaseDecorator
 
         $flatData = array_merge(array_keys($data), array_values($data));
         $valuesCount = count($data);
-        $parametricValues = "(".  substr(str_repeat("?, ", $valuesCount ), 0, -2).")"; // (?, ... ,?) for each value.
+        $keyParameters = implode(",", array_keys($data));
+        $parameters = "(".  substr(str_repeat("?, ", $valuesCount ), 0, -2).")"; // (?, ... ,?) for each value.
 
-        $sql = "INSERT INTO $table $parametricValues VALUES $parametricValues";
+        $sql = "INSERT INTO $table ($keyParameters) VALUES $parameters";
         var_dump($sql." === > ");
-        var_dump($flatData);
+        var_dump($keyParameters);
 
-        $results = $this->pearDatabase->pquery($sql, $flatData, $handler->dieOnError, $handler->message);
+        $results = $this->pearDatabase->pquery($sql, array_values($data), $handler->dieOnError, $handler->message);
 
         return $results;
     }
@@ -161,10 +161,10 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * @param mixed $table The table on which the update has to be executed.
      * @param mixed $dataID The record to be updated into the selected table, in the form of $recordToChange = ['id' => 'id_value_1','id2' => 'id_value_2'] .
-     * @param mixed $data The data to be updated into the selected record, in the form of $data = ['field_1' => 'value_1','field_2' => 'value_2'].
+     * @param mixed $data The data to be updated into the selected table, in the form of $data = ['field_1' => 'value_1','field_2' => 'value_2'].
      * @param array $options Any additional option needed.
      */
-    public function update($table, $dataID, $data, $options)
+    public function update($table, $dataID, $data, $options=[])
     {
         $handler = OptionsHandlerFactory::createInstance($options);
 
@@ -172,14 +172,14 @@ class HamperDatabase extends PearDatabaseDecorator
         $dataString = "";
         for ($int=0; $int< $dataSize ; $int++)
         {
-            $dataString = $dataString.array_keys($data)[$int]."=? "; // creates 'key_1 =?, ...,  key_n = ?' string  from $data
+            $dataString = $dataString."'".array_keys($data)[$int]."'=? "; // creates 'key_1 =?, ...,  key_n = ?' string  from $data
         }
 
         $dataIDSize = count($dataID);
         $dataIDString = "";
         for ($int=0; $int< $dataIDSize ; $int++)
         {
-            $dataIDString = $dataIDString.array_keys($dataID)[$int]."=? "; // creates 'key_1 =?, ...,  key_n = ?' string from $dataID
+            $dataIDString = $dataIDString."'".array_keys($dataID)[$int]."'=? "; // creates 'key_1 =?, ...,  key_n = ?' string from $dataID
         }
 
         $sql = "UPDATE $table SET $dataString WHERE $dataIDString";
@@ -193,17 +193,32 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
-     * Delete one record.
-     */
-
-    /**
      * Deletes the given record within the given table.
      *
      * @param mixed $table The table and record on which the delete has to be executed.
-     * @param mixed $data The data to be deleted from the selected record.
+     * @param mixed $data The data to be deleted from the selected table, in the form of $data = ['field_1' => 'value_1','field_2' => 'value_2'].
+     * @param array $options Any additional option needed.
      */
-    public function delete($table, $data)
+    public function delete($table, $data, $options = [])
     {
+        $handler = OptionsHandlerFactory::createInstance($options);
 
+        $flatData = array_merge(array_keys($data), array_values($data));
+        $dataSize = count($data);
+        $dataString = "";
+        $values = [];
+        for ($int=0; $int< $dataSize ; $int++)
+        {
+            $dataString = $dataString."'".array_keys($data)[$int]."'=? "; // creates 'key_1 =?, ...,  key_n = ?' string  from $data
+        }
+
+        $sql = "DELETE FROM $table WHERE $dataString";
+        var_dump($sql." === > ");
+        var_dump(array_values($data));
+
+
+        $results = $this->pearDatabase->pquery($sql, array_values($data), $handler->dieOnError, $handler->message);
+
+        return $results;
     }
 }

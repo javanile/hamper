@@ -58,7 +58,8 @@ class HamperDatabaseTest extends TestCase
 
         $this->assertEquals($key, $row[0]['field2']);
     }
-    /*
+
+
     public function testInsert()
     {
         $hdb = Hamper::getInstance();
@@ -78,16 +79,22 @@ class HamperDatabaseTest extends TestCase
 
         $keys = array_keys($data);
         $values = array_values($data);
-        $row = $hdb->insert("test", $data, ['dieOnError' => true]);
-        var_dump($row);
+        $ins = $hdb->insert("test", $data, ['dieOnError' => true]);
+        var_dump("INSERT RESULT : ");
+        var_dump($ins);
 
         $sql = "SELECT * FROM test WHERE field1 = ?";
-        $res = $hdb->query($sql, [$key1]);
+        try
+        {
+            $row = $hdb->fetch($sql, [$key1]);
+        } catch (\Exception $e)
+        {
+            var_dump($e->getMessage());
+        }
 
-        $this->assertEquals($key1, $row[0]['field1']);
-
+        $this->assertEquals($key1, $row['field1']);
     }
-    */
+
     public function testUpdate()
     {
         $hdb = Hamper::getInstance();
@@ -114,11 +121,10 @@ class HamperDatabaseTest extends TestCase
             'field_2' => $key2,
         ];
 
-
         $data = [
                 'field_1' => $key3,
                 'field_2' => $key4,
-                ];
+        ];
 
         $row = $hdb->update("test", $recordToChange, $data, ['dieOnError' => true]);
         var_dump($row);
@@ -127,5 +133,34 @@ class HamperDatabaseTest extends TestCase
 
     }
 
-    // public function testDelete(){}
+
+    public function testDelete()
+    {
+        $hdb = Hamper::getInstance();
+        $key1 = md5(time().rand());
+        $key2 = md5(time().rand());
+
+        $sql = "DROP TABLE IF EXISTS test";
+        $res = $hdb->query($sql, []);
+
+        $sql = "CREATE TABLE IF NOT EXISTS test (field_1 TEXT, field_2 TEXT) ENGINE=INNODB";
+        $res = $hdb->query($sql, []);
+
+        $sql = "INSERT INTO test (field1, field2) VALUES (?, ?)";
+        $res = $hdb->query($sql, [$key1, $key2]);
+
+        $sql = "INSERT INTO test (field1, field2) VALUES (?, ?)";
+        $res = $hdb->query($sql, [md5(time().rand()), md5(time().rand())]);
+
+
+        $data = [
+            'field_1' => $key1,
+            'field_2' => $key2,
+        ];
+
+        $row = $hdb->delete("test", $data, ['dieOnError' => true]);
+        var_dump($row);
+
+        $this->assertEquals(0, $row->RecordCount());
+    }
 }

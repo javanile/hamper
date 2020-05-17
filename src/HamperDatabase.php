@@ -38,7 +38,7 @@ class HamperDatabase extends PearDatabaseDecorator
         $this->tables = new HamperDatabaseTables($pearDatabase);
     }
 
-    /*
+    /**
      * Executes the given parametric query.
      *
      * @usage $hdb->query($sql, $values)
@@ -47,7 +47,7 @@ class HamperDatabase extends PearDatabaseDecorator
      * @param array $params The parameters in use within the parametric query sent.
      * @param array $options Any additional option needed.
      *
-     * @throws \Exception
+     * @throws HamperException
      * @example $hdb->asdasdas
      *          asdasd
      *              asd
@@ -60,9 +60,16 @@ class HamperDatabase extends PearDatabaseDecorator
         $handler = OptionsHandlerFactory::createInstance($options);
         $results = $this->pearDatabase->pquery($sql, $params, $handler->dieOnError, $handler->message);
 
-        #if (!$results) {
-        #    throw new HamperException();
-        #}
+        if (!$results) {
+            throw HamperException::forSqlError([
+                'backtrace' => debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1),
+                'pearDatabase' => $this->pearDatabase,
+                //'sql' => $sql,
+                //'params' => $params,
+                //'dieOnError' => $handler->dieOnError,
+                //'message' => $handler->message
+            ]);
+        }
 
         return $results;
     }
@@ -74,16 +81,29 @@ class HamperDatabase extends PearDatabaseDecorator
      * @param array $params The parameters in use within the parametric query sent.
      * @param array $options Any additional option needed.
      * @return array The result set rows.
-     * @throws \Exception This exception is thrown if problems with the query arise.
+     * @throws HamperException This exception is thrown if problems with the query arise.
      */
     public function fetch($sql, $params = [], $options = [])
     {
         $handler = OptionsHandlerFactory::createInstance($options);
         $results = $this->pearDatabase->pquery($sql, $params, $handler->dieOnError, $handler->message);
 
-        $row = $this->pearDatabase->query_result_rowdata($results);
+        if (!$results) {
+            throw HamperException::forSqlError(array(
+                'backtrace' => debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1),
+                'pearDatabase' => $this->pearDatabase,
+                //'sql' => $sql,
+                //'params' => $params,
+                //'dieOnError' => $handler->dieOnError,
+                //'message' => $handler->message
+            ));
+        }
 
-        return $row;
+        try {
+            return $this->pearDatabase->query_result_rowdata($results);
+        } catch (\Exception $e) {
+            // The above HamperException prevent this legacy exception
+        }
     }
 
     /**
@@ -93,25 +113,35 @@ class HamperDatabase extends PearDatabaseDecorator
      * @param array $params The parameters in use within the parametric query sent.
      * @param array $options Any additional option needed.
      * @return array The result set rows.
-     * @throws \Exception This exception is thrown if problems with the query arise.
+     * @throws HamperException This exception is thrown if problems with the query arise.
      */
     public function fetchAll($sql, $params = [], $options = [])
     {
         $handler = OptionsHandlerFactory::createInstance($options);
         $results = $this->pearDatabase->pquery($sql, $params, $handler->dieOnError, $handler->message);
 
-        //var_dump($results);
-        if ($results != null)
-        {
-            $rows = [];
+        if (!$results) {
+            throw HamperException::forSqlError(array(
+                'backtrace' => debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1),
+                'pearDatabase' => $this->pearDatabase,
+                //'sql' => $sql,
+                //'params' => $params,
+                //'dieOnError' => $handler->dieOnError,
+                //'message' => $handler->message
+            ));
+        }
 
-            for($rowIndex = 0;$rowIndex < $this->pearDatabase->num_rows($results); $rowIndex++)
-            {
+        $rows = [];
+
+        try {
+            for ($rowIndex = 0; $rowIndex < $this->pearDatabase->num_rows($results); $rowIndex++) {
                 $rows[$rowIndex] = $this->pearDatabase->query_result_rowdata($results, $rowIndex);
             }
-            return $rows;
+        } catch (\Exception $e) {
+            // The above HamperException prevent this legacy exception
         }
-        return [];
+
+        return $rows;
     }
 
     /**
@@ -120,74 +150,86 @@ class HamperDatabase extends PearDatabaseDecorator
      * @param string $table The table's name on which the insert has to be executed.
      * @param mixed $data The data to be inserted into the selected table, in the form of $data = ['field_1' => 'value_1','field_2' => 'value_2'].
      * @param array $options Any additional option needed.
+     * @throws HamperException
      */
     public function insert($table, $data, $options=[])
     {
-        /*
-        $table= 'vtiger_suite_mailscanner_account'
-        $data = [
-            'field_1' => 'value_1',
-            'field_2' => 'value_2',
-            .
-            .
-            .
-        ]
-        $flatData = ['field_1', 'field_', ..., 'value_1', 'value_2']
+        $fields = '`' . implode('`, `', array_keys($data)) . '`';
+        $values = implode(', ', array_fill(0, count($data), '?'));
 
-        $flatData = array_merge(array_keys($data), array_values($data));
-
-        $sql = "INSER INTO $nometabella (?, ?, ...?) VALUES (?, ?, ...?)"
-        $PDB->pquery($sql, )
-        */
+        $sql = "INSERT INTO {$table} ({$fields}) VALUES ({$values})";
 
         $handler = OptionsHandlerFactory::createInstance($options);
-
-        $flatData = array_merge(array_keys($data), array_values($data));
-        $valuesCount = count($data);
-        $keyParameters = implode(",", array_keys($data));
-        $parameters = "(".  substr(str_repeat("?, ", $valuesCount ), 0, -2).")"; // (?, ... ,?) for each value.
-
-        $sql = "INSERT INTO $table ($keyParameters) VALUES $parameters";
-        var_dump($sql." === > ");
-        var_dump($keyParameters);
-
         $results = $this->pearDatabase->pquery($sql, array_values($data), $handler->dieOnError, $handler->message);
 
+        if (!$results) {
+            throw HamperException::forSqlError(array(
+                'backtrace' => debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1),
+                'pearDatabase' => $this->pearDatabase,
+                //'sql' => $sql,
+                //'params' => $params,
+                //'dieOnError' => $handler->dieOnError,
+                //'message' => $handler->message
+            ));
+        }
+
         return $results;
+    }
+
+    /**
+     * Inserts the given record within the selected table.
+     *
+     * @param string $table The table's name on which the insert has to be executed.
+     * @param mixed $data The data to be inserted into the selected table, in the form of $data = ['field_1' => 'value_1','field_2' => 'value_2'].
+     * @param array $options Any additional option needed.
+     * @throws HamperException
+     */
+    public function lastInsertId(string $table = '')
+    {
+        return $this->pearDatabase->getLastInsertID($table);
     }
 
     /**
      * Updates the given record with the given data.
      *
      * @param mixed $table The table on which the update has to be executed.
-     * @param mixed $dataID The record to be updated into the selected table, in the form of $recordToChange = ['id' => 'id_value_1','id2' => 'id_value_2'] .
+     * @param $key
      * @param mixed $data The data to be updated into the selected table, in the form of $data = ['field_1' => 'value_1','field_2' => 'value_2'].
      * @param array $options Any additional option needed.
+     * @throws HamperException
      */
-    public function update($table, $dataID, $data, $options=[])
+    public function update($table, $key, $data, $options = [])
     {
         $handler = OptionsHandlerFactory::createInstance($options);
 
-        $dataSize = count($data);
-        $dataString = "";
-        for ($int=0; $int< $dataSize ; $int++)
-        {
-            $dataString = $dataString."'".array_keys($data)[$int]."'=? "; // creates 'key_1 =?, ...,  key_n = ?' string  from $data
+        if (empty($data[$key])) {
+            throw HamperException::forMissingKey(array(
+                'backtrace' => debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1),
+            ));
         }
 
-        $dataIDSize = count($dataID);
-        $dataIDString = "";
-        for ($int=0; $int< $dataIDSize ; $int++)
-        {
-            $dataIDString = $dataIDString."'".array_keys($dataID)[$int]."'=? "; // creates 'key_1 =?, ...,  key_n = ?' string from $dataID
+        if (!$data || !is_array($data)) {
+            throw HamperException::forMissingData(array(
+                'backtrace' => debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1),
+            ));
         }
 
-        $sql = "UPDATE $table SET $dataString WHERE $dataIDString";
-        var_dump($sql." === > ");
-        $flatData = array_merge(array_values($data), array_values($dataID));
-        var_dump($flatData);
+        $fields = implode(' = ?,', array_keys($data)) . ' = ?';
+        $params = array_merge(array_values($data), [$data[$key]]);
 
-        $results = $this->pearDatabase->pquery($sql, $flatData, $handler->dieOnError, $handler->message);
+        $sql = "UPDATE `{$table}` SET {$fields} WHERE `{$key}` = ?";
+        $results = $this->pearDatabase->pquery($sql, $params, $handler->dieOnError, $handler->message);
+
+        if (!$results) {
+            throw HamperException::forSqlError(array(
+                'backtrace' => debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1),
+                'pearDatabase' => $this->pearDatabase,
+                //'sql' => $sql,
+                //'params' => $params,
+                //'dieOnError' => $handler->dieOnError,
+                //'message' => $handler->message
+            ));
+        }
 
         return $results;
     }
@@ -196,28 +238,28 @@ class HamperDatabase extends PearDatabaseDecorator
      * Deletes the given record within the given table.
      *
      * @param mixed $table The table and record on which the delete has to be executed.
-     * @param mixed $data The data to be deleted from the selected table, in the form of $data = ['field_1' => 'value_1','field_2' => 'value_2'].
+     * @param $key
+     * @param $value
      * @param array $options Any additional option needed.
+     * @throws HamperException
      */
-    public function delete($table, $data, $options = [])
+    public function delete($table, $key, $value, $options = [])
     {
+        $sql = "DELETE FROM `{$table}` WHERE `${key}` = ?";
+
         $handler = OptionsHandlerFactory::createInstance($options);
+        $results = $this->pearDatabase->pquery($sql, [$value], $handler->dieOnError, $handler->message);
 
-        $flatData = array_merge(array_keys($data), array_values($data));
-        $dataSize = count($data);
-        $dataString = "";
-        $values = [];
-        for ($int=0; $int< $dataSize ; $int++)
-        {
-            $dataString = $dataString."'".array_keys($data)[$int]."'=? "; // creates 'key_1 =?, ...,  key_n = ?' string  from $data
+        if (!$results) {
+            throw HamperException::forSqlError(array(
+                'backtrace' => debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1),
+                'pearDatabase' => $this->pearDatabase,
+                //'sql' => $sql,
+                //'params' => $params,
+                //'dieOnError' => $handler->dieOnError,
+                //'message' => $handler->message
+            ));
         }
-
-        $sql = "DELETE FROM $table WHERE $dataString";
-        var_dump($sql." === > ");
-        var_dump(array_values($data));
-
-
-        $results = $this->pearDatabase->pquery($sql, array_values($data), $handler->dieOnError, $handler->message);
 
         return $results;
     }

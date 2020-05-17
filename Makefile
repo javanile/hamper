@@ -19,9 +19,11 @@ update-readme:
 up:
 	docker-compose up -d
 test:
-	./scripts/test-runner.sh
+	bash scripts/test-runner.sh
+test-dev:
+	docker-compose run --rm vtiger ./vendor/bin/phpunit tests
 tdd: up
-	docker-compose run --rm vtiger ./vendor/bin/phpunit --stop-on-failure $(take)
+	docker-compose run --rm vtiger ./vendor/bin/phpunit --stop-on-failure --filter $(take)
 release: update-readme
 	git add .
 	git commit -am "release"

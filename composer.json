@@ -1,4 +1,15 @@
 {
+    "name": "javanile/hamper",
+    "description": "Developer friendly database library for vtiger",
+    "version": "0.0.1",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Francesco Bianco",
+            "email": "bianco@javanile.org"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Javanile\\Hamper\\": "src/"

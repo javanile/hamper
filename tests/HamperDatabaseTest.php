@@ -2,165 +2,168 @@
 
 namespace Javanile\Hamper\Tests;
 
-use Javanile\Hamper\Hamper;
 use Javanile\Hamper\HamperException;
-use PHPUnit\Framework\TestCase;
 
 class HamperDatabaseTest extends TestCase
 {
-    // public function testQuery(){}
+    public function testQuery()
+    {
+        $sql = "CREATE TABLE IF NOT EXISTS test (field1 TEXT, field2 TEXT)";
+
+        try {
+            $res = $this->hdb->query($sql);
+            $this->assertTrue(is_object($res));
+            $res = $this->hdb->query($sql);
+            $this->assertTrue(is_object($res));
+        } catch (HamperException $e) {
+            die($e->getMessage());
+        }
+    }
+
+    public function testQueryFail()
+    {
+        $this->expectException(HamperException::class);
+        $this->hdb->query("POINTLESS BROKEN QUERY");
+    }
 
     public function testFetch()
     {
-        $hdb = Hamper::getInstance();
         $key = md5(time().rand());
 
         try {
-            $sql = "DROP TABLE IF EXISTS test";
-            $res = $hdb->query($sql, []);
-
-            $sql = "CREATE TABLE IF NOT EXISTS test (field1 TEXT, field2 TEXT) ENGINE=INNODB";
-            $res = $hdb->query($sql, []);
-
-            $sql = "INSERT INTO test (field1, field2) VALUES (?, ?)";
-            $res = $hdb->query($sql, [$key, $key]);
-
-            $sql = "SELECT * FROM test WHERE field1 = ?";
-            $row = $hdb->fetch($sql, [$key], ['dieOnError' => true]);
-        } catch (HamperException $exception) {
-            var_dump($exception->getMessage());
-            exit(1);
+            $this->hdb->query("CREATE TABLE IF NOT EXISTS test (field1 TEXT, field2 TEXT)");
+            $this->hdb->query("INSERT INTO test (field1, field2) VALUES (?, ?)", [$key, $key]);
+            $row = $this->hdb->fetch("SELECT * FROM test WHERE field1 = ?", [$key]);
+            $this->assertEquals($key, $row['field2']);
+        } catch (HamperException $e) {
+            die($e->getMessage());
         }
-
-        $this->assertEquals($key, $row['field2']);
     }
+
+    public function testFetchFail()
+    {
+        $this->expectException(HamperException::class);
+        $this->hdb->fetch("POINTLESS BROKEN QUERY");
+    }
+
     public function testFetchAll()
     {
-        $hdb = Hamper::getInstance();
         $key = md5(time().rand());
 
         try {
-            $sql = "DROP TABLE IF EXISTS test";
-            $res = $hdb->query($sql, []);
-
-            $sql = "CREATE TABLE IF NOT EXISTS test (field1 TEXT, field2 TEXT) ENGINE=INNODB";
-            $res = $hdb->query($sql, []);
-
-            $sql = "INSERT INTO test (field1, field2) VALUES (?, ?)";
-            $res = $hdb->query($sql, [$key, $key]);
-
-            $sql = "SELECT * FROM test WHERE field1 = ?";
-            $row = $hdb->fetchAll($sql, [$key], ['dieOnError' => true]);
-        } catch (HamperException $exception) {
-            var_dump($exception->getMessage());
-            exit(1);
+            $this->hdb->query("CREATE TABLE IF NOT EXISTS test (field1 TEXT, field2 TEXT)");
+            $this->hdb->query("INSERT INTO test (field1, field2) VALUES (?, ?)", [$key, $key]);
+            $this->hdb->query("INSERT INTO test (field1, field2) VALUES (?, ?)", [$key, $key]);
+            $rows = $this->hdb->fetchAll("SELECT * FROM test WHERE field1 = ?", [$key]);
+            $this->assertEquals($key, $rows[0]['field2']);
+            $this->assertEquals($key, $rows[1]['field2']);
+        } catch (HamperException $e) {
+            die($e->getMessage());
         }
-
-        $this->assertEquals($key, $row[0]['field2']);
     }
 
+    public function testFetchAllFail()
+    {
+        $this->expectException(HamperException::class);
+        $this->hdb->fetchAll("POINTLESS BROKEN QUERY");
+    }
 
     public function testInsert()
     {
-        $hdb = Hamper::getInstance();
-        $key1 = md5(time().rand());
-        $key2 = md5(time().rand());
-
-        $sql = "DROP TABLE IF EXISTS test";
-        $res = $hdb->query($sql, []);
-
-        $sql = "CREATE TABLE IF NOT EXISTS test (field_1 TEXT, field_2 TEXT) ENGINE=INNODB";
-        $res = $hdb->query($sql, []);
-
         $data = [
-                'field_1' => $key1,
-                'field_2' => $key2,
-                ];
+            'field1' => md5(time().rand()),
+            'field2' => md5(time().rand()),
+        ];
 
-        $keys = array_keys($data);
-        $values = array_values($data);
-        $ins = $hdb->insert("test", $data, ['dieOnError' => true]);
-        var_dump("INSERT RESULT : ");
-        var_dump($ins);
-
-        $sql = "SELECT * FROM test WHERE field1 = ?";
-        try
-        {
-            $row = $hdb->fetch($sql, [$key1]);
-        } catch (\Exception $e)
-        {
-            var_dump($e->getMessage());
+        try {
+            $this->hdb->query("CREATE TABLE IF NOT EXISTS test (field1 TEXT, field2 TEXT)");
+            $res = $this->hdb->insert("test", $data);
+            $this->assertTrue(is_object($res));
+            $row = $this->hdb->fetch("SELECT * FROM test WHERE field1 = ?", [$data['field1']]);
+            $this->assertEquals($data['field2'], $row['field2']);
+        } catch (HamperException $e) {
+            die($e->getMessage());
         }
+    }
 
-        $this->assertEquals($key1, $row['field1']);
+    public function testInsertFail()
+    {
+        $this->expectException(HamperException::class);
+        $this->hdb->insert("POINTLESS BROKEN QUERY", []);
+    }
+
+    public function testLastInsertId()
+    {
+        try {
+            $this->hdb->query("CREATE TABLE IF NOT EXISTS test (field1 INT AUTO_INCREMENT PRIMARY KEY, field2 TEXT)");
+            $this->hdb->insert("test", ['field2' => 'value2']);
+            $lastInsertId = $this->hdb->lastInsertId();
+            $this->assertEquals(1, $lastInsertId);
+        } catch (HamperException $e) {
+            die($e->getMessage());
+        }
     }
 
     public function testUpdate()
     {
-        $hdb = Hamper::getInstance();
-        $key1 = md5(time().rand());
-        $key2 = md5(time().rand());
-        $key3 = md5(time().rand());
-        $key4 = md5(time().rand());
-
-        $sql = "DROP TABLE IF EXISTS test";
-        $res = $hdb->query($sql, []);
-
-        $sql = "CREATE TABLE IF NOT EXISTS test (field_1 TEXT, field_2 TEXT) ENGINE=INNODB";
-        $res = $hdb->query($sql, []);
-
-        $sql = "INSERT INTO test (field1, field2) VALUES (?, ?)";
-        $res = $hdb->query($sql, [$key1, $key2]);
-
-        $sql = "INSERT INTO test (field1, field2) VALUES (?, ?)";
-        $res = $hdb->query($sql, [md5(time().rand()), md5(time().rand())]);
-
-
-        $recordToChange = [
-            'field_1' => $key1,
-            'field_2' => $key2,
+        $data1 = [
+            'field1' => md5(time().rand()),
+            'field2' => md5(time().rand()),
         ];
 
-        $data = [
-                'field_1' => $key3,
-                'field_2' => $key4,
+        $data2 = [
+            'field1' => $data1['field1'],
+            'field2' => md5(time().rand()),
         ];
 
-        $row = $hdb->update("test", $recordToChange, $data, ['dieOnError' => true]);
-        var_dump($row);
-
-        $this->assertEquals($key3, $row[0]['field1']);
-
+        try {
+            $this->hdb->query("CREATE TABLE IF NOT EXISTS test (field1 TEXT, field2 TEXT)");
+            $this->hdb->insert("test", $data1);
+            $row = $this->hdb->fetch("SELECT * FROM test WHERE field1 = ?", [$data1['field1']]);
+            $this->assertEquals($data1['field2'], $row['field2']);
+            $res = $this->hdb->update("test", "field1", $data2);
+            $this->assertTrue(is_object($res));
+            $row = $this->hdb->fetch("SELECT * FROM test WHERE field1 = ?", [$data1['field1']]);
+            $this->assertEquals($data2['field2'], $row['field2']);
+        } catch (HamperException $e) {
+            die($e->getMessage());
+        }
     }
 
+    public function testUpdateFail()
+    {
+        $this->expectException(HamperException::class);
+        $this->hdb->update("test", 'invalid key', ['field1' => 'value1', 'field2' => 'value2']);
+
+        $this->expectException(HamperException::class);
+        $this->hdb->update("test", 'field1', []);
+
+        $this->expectException(HamperException::class);
+        $this->hdb->update("unknown table", 'field1', ['field1' => 'value1', 'field2' => 'value2']);
+    }
 
     public function testDelete()
     {
-        $hdb = Hamper::getInstance();
-        $key1 = md5(time().rand());
-        $key2 = md5(time().rand());
-
-        $sql = "DROP TABLE IF EXISTS test";
-        $res = $hdb->query($sql, []);
-
-        $sql = "CREATE TABLE IF NOT EXISTS test (field_1 TEXT, field_2 TEXT) ENGINE=INNODB";
-        $res = $hdb->query($sql, []);
-
-        $sql = "INSERT INTO test (field1, field2) VALUES (?, ?)";
-        $res = $hdb->query($sql, [$key1, $key2]);
-
-        $sql = "INSERT INTO test (field1, field2) VALUES (?, ?)";
-        $res = $hdb->query($sql, [md5(time().rand()), md5(time().rand())]);
-
-
         $data = [
-            'field_1' => $key1,
-            'field_2' => $key2,
+            'field1' => md5(time().rand()),
+            'field2' => md5(time().rand()),
         ];
 
-        $row = $hdb->delete("test", $data, ['dieOnError' => true]);
-        var_dump($row);
+        try {
+            $this->hdb->query("CREATE TABLE IF NOT EXISTS test (field1 TEXT, field2 TEXT) ");
+            $this->hdb->insert('test', $data);
+            $res = $this->hdb->delete('test', 'field1', $data['field1']);
+            $this->assertTrue(is_object($res));
+            $row = $this->hdb->fetch("SELECT * FROM test WHERE field1 = ?", [$data['field1']]);
+            $this->assertFalse($row);
+        } catch (HamperException $e) {
+            die($e->getMessage());
+        }
+    }
 
-        $this->assertEquals(0, $row->RecordCount());
+    public function testDeleteFail()
+    {
+        $this->expectException(HamperException::class);
+        $this->hdb->delete('', '', '');
     }
 }

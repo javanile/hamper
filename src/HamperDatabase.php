@@ -51,7 +51,14 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * @throws HamperException
      *
-     * @example $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"])
+     * @example // Execute simple query
+     *          $hdb->query("SET NAMES utf8");
+     *
+     * @example // Execute simple query
+     *          $hdb->query("SET NAMES utf8");
+     *
+     * @example // Execute prepare query
+     *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function query($sql, $params = [], $options = [])
     {

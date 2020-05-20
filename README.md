@@ -41,6 +41,8 @@ $hdb = Hamper::getInstance();
 
 Executes the given parametric query
 
+#### Examples
+
 ```php
 <?php
 // Execute simple query
@@ -67,6 +69,8 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
+#### Examples
+
 [[back to top]](#Documentation)
 
 #### Returns an array containing all of the result set rows by the given parametric query
@@ -74,6 +78,8 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 `$hdb->fetchAll(...)`
 
 
+
+#### Examples
 
 [[back to top]](#Documentation)
 
@@ -83,6 +89,8 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
+#### Examples
+
 [[back to top]](#Documentation)
 
 #### Inserts the given record within the selected table
@@ -90,6 +98,8 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 `$hdb->lastInsertId(...)`
 
 
+
+#### Examples
 
 [[back to top]](#Documentation)
 
@@ -99,6 +109,8 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
+#### Examples
+
 [[back to top]](#Documentation)
 
 #### Deletes the given record within the given table
@@ -106,6 +118,8 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 `$hdb->delete(...)`
 
 
+
+#### Examples
 
 [[back to top]](#Documentation)
 
@@ -115,6 +129,8 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 `$hdb->create(...)`
 
 
+
+#### Examples
 
 [[back to top]](#Documentation)
 

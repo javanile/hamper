@@ -37,9 +37,9 @@ $hdb = Hamper::getInstance();
 ### Data manipulation
 #### Execute query
 
-`$hdb->query(...)`
-
 Executes the given parametric query
+
+`$hdb->query(...)`
 
 ##### Examples
 
@@ -63,9 +63,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Fetches the next row from the result set rows by the given parametric query
 
+
+
 `$hdb->fetch(...)`
-
-
 
 ##### Examples
 
@@ -73,29 +73,29 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Returns an array containing all of the result set rows by the given parametric query
 
+
+
 `$hdb->fetchAll(...)`
-
-
 
 ##### Examples
 
 [[back to top]](#Documentation)
 
 #### Inserts the given record within the selected table
+
+
 
 `$hdb->insert(...)`
 
-
-
 ##### Examples
 
 [[back to top]](#Documentation)
 
 #### Inserts the given record within the selected table
 
+
+
 `$hdb->lastInsertId(...)`
-
-
 
 ##### Examples
 
@@ -103,9 +103,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Updates the given record with the given data
 
+
+
 `$hdb->update(...)`
-
-
 
 ##### Examples
 
@@ -113,9 +113,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Deletes the given record within the given table
 
+
+
 `$hdb->delete(...)`
-
-
 
 ##### Examples
 
@@ -124,9 +124,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 ### Tables manipulation
 #### Create new table
 
+
+
 `$hdb->create(...)`
-
-
 
 ##### Examples
 

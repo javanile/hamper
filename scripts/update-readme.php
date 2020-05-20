@@ -28,10 +28,9 @@ foreach ($sections as $class => $title) {
             $summary = trim($docBlock->getSummary(), '.');
             $description = $docBlock->getDescription();
             $toc .= '    * ['.$summary.'](#'.strtr($summary, ' ', '-').')'."\n";
-            $documentation .=
-                '#### ' . $summary . "\n\n" .
-                '`$hdb->' . $method . '(...)`' . "\n\n" .
-                $description . "\n\n";
+            $documentation .= '#### ' . $summary . "\n\n";
+            $documentation .= $description . "\n\n";
+            $documentation .= '`$hdb->' . $method . '(...)`' . "\n\n";
             $documentation .= "##### Examples\n\n";
             foreach ($docBlock->getTagsByName('example') as $tag) {
                 $documentation .= "```php\n<?php\n" . $tag->getDescription() . "\n```\n\n";

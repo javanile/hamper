@@ -33,7 +33,7 @@ foreach ($sections as $class => $title) {
                 '`$hdb->' . $method . '(...)`' . "\n\n" .
                 $description . "\n\n";
             foreach ($docBlock->getTagsByName('example') as $tag) {
-                $documentation .= "```php\n" . $tag->getDescription() . "\n```\n\n";
+                $documentation .= "```php\n<?php\n" . $tag->getDescription() . "\n```\n\n";
             }
             $documentation .= '[[back to top]](#Documentation)'."\n\n";
         } catch (ReflectionException $exception) {

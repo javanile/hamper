@@ -32,7 +32,7 @@ foreach ($sections as $class => $title) {
                 '#### ' . $summary . "\n\n" .
                 '`$hdb->' . $method . '(...)`' . "\n\n" .
                 $description . "\n\n";
-            $documentation .= "#### Examples\n\n";
+            $documentation .= "##### Examples\n\n";
             foreach ($docBlock->getTagsByName('example') as $tag) {
                 $documentation .= "```php\n<?php\n" . $tag->getDescription() . "\n```\n\n";
             }

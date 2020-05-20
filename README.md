@@ -41,7 +41,7 @@ $hdb = Hamper::getInstance();
 
 Executes the given parametric query
 
-#### Examples
+##### Examples
 
 ```php
 <?php
@@ -69,7 +69,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
-#### Examples
+##### Examples
 
 [[back to top]](#Documentation)
 
@@ -79,7 +79,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
-#### Examples
+##### Examples
 
 [[back to top]](#Documentation)
 
@@ -89,7 +89,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
-#### Examples
+##### Examples
 
 [[back to top]](#Documentation)
 
@@ -99,7 +99,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
-#### Examples
+##### Examples
 
 [[back to top]](#Documentation)
 
@@ -109,7 +109,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
-#### Examples
+##### Examples
 
 [[back to top]](#Documentation)
 
@@ -119,7 +119,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
-#### Examples
+##### Examples
 
 [[back to top]](#Documentation)
 
@@ -130,7 +130,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
-#### Examples
+##### Examples
 
 [[back to top]](#Documentation)
 

@@ -65,6 +65,8 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 [[back to top]](#Documentation)
 
+<hr/>
+
 #### Fetches the next row from the result set rows by the given parametric query
 
 
@@ -78,6 +80,8 @@ query($sql, $params = [], $options = [])
 ##### Examples
 
 [[back to top]](#Documentation)
+
+<hr/>
 
 #### Returns an array containing all of the result set rows by the given parametric query
 
@@ -93,19 +97,7 @@ query($sql, $params = [], $options = [])
 
 [[back to top]](#Documentation)
 
-#### Inserts the given record within the selected table
-
-
-
-##### Usage 
-
-```
-query($sql, $params = [], $options = [])
-```
-
-##### Examples
-
-[[back to top]](#Documentation)
+<hr/>
 
 #### Inserts the given record within the selected table
 
@@ -120,6 +112,24 @@ query($sql, $params = [], $options = [])
 ##### Examples
 
 [[back to top]](#Documentation)
+
+<hr/>
+
+#### Inserts the given record within the selected table
+
+
+
+##### Usage 
+
+```
+query($sql, $params = [], $options = [])
+```
+
+##### Examples
+
+[[back to top]](#Documentation)
+
+<hr/>
 
 #### Updates the given record with the given data
 
@@ -135,6 +145,8 @@ query($sql, $params = [], $options = [])
 
 [[back to top]](#Documentation)
 
+<hr/>
+
 #### Deletes the given record within the given table
 
 
@@ -148,6 +160,8 @@ query($sql, $params = [], $options = [])
 ##### Examples
 
 [[back to top]](#Documentation)
+
+<hr/>
 
 ### Tables manipulation
 #### Create new table
@@ -163,6 +177,8 @@ query($sql, $params = [], $options = [])
 ##### Examples
 
 [[back to top]](#Documentation)
+
+<hr/>
 
 
 

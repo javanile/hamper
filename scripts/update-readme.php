@@ -38,6 +38,7 @@ foreach ($sections as $class => $title) {
                 $documentation .= "```php\n<?php\n" . $tag->getDescription() . "\n```\n\n";
             }
             $documentation .= '[[back to top]](#Documentation)'."\n\n";
+            $documentation .= "<hr/>"."\n\n";
         } catch (ReflectionException $exception) {
             echo $exception->getMessage()."\n";
             exit(1);

@@ -41,7 +41,7 @@ Executes the given parametric query
 
 ##### Usage 
 
-```Hack
+```Bash
 $hdb->query($sql, $values)
 ```
 

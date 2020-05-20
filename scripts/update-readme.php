@@ -28,10 +28,11 @@ foreach ($sections as $class => $title) {
             $docBlock = $docBlockFactory ->create($reflection->getDocComment());
             $summary = trim($docBlock->getSummary(), '.');
             $description = $docBlock->getDescription();
+            $usage = $docBlock->getTagsByName('usage')[0];
             $toc .= '    * ['.$summary.'](#'.strtr($summary, ' ', '-').')'."\n";
             $documentation .= '#### ' . $summary . "\n\n";
             $documentation .= $description . "\n\n";
-            $documentation .= "##### Usage \n\n```Zephir\n" . $docBlock->getTagsByName('usage')[0]->getDescription() . "\n```\n\n";
+            $documentation .= "##### Usage \n\n```\n" . $usage->getDescription() . "\n```\n\n";
             $documentation .= "##### Examples\n\n";
             foreach ($docBlock->getTagsByName('example') as $tag) {
                 $documentation .= "```php\n<?php\n" . $tag->getDescription() . "\n```\n\n";

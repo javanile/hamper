@@ -39,7 +39,9 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
-     * Executes the given parametric query.
+     * Execute query.
+     *
+     * Executes the given parametric query
      *
      * @usage $hdb->query($sql, $values)
      *
@@ -48,12 +50,8 @@ class HamperDatabase extends PearDatabaseDecorator
      * @param array $options Any additional option needed.
      *
      * @throws HamperException
-     * @example $hdb->asdasdas
-     *          asdasd
-     *              asd
-     *              asdasd
-     *          asdasd
-     *          dsa
+     *
+     * @example $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"])
      */
     public function query($sql, $params = [], $options = [])
     {

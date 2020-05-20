@@ -23,7 +23,7 @@ $hdb = Hamper::getInstance();
 ## Documentation
 
 1. [Data manipulation](#Data-manipulation)
-    1. [Executes the given parametric query](#Executes-the-given-parametric-query)
+    1. [Execute query](#Execute-query)
     1. [Fetches the next row from the result set rows by the given parametric query](#Fetches-the-next-row-from-the-result-set-rows-by-the-given-parametric-query)
     1. [Returns an array containing all of the result set rows by the given parametric query](#Returns-an-array-containing-all-of-the-result-set-rows-by-the-given-parametric-query)
     1. [Inserts the given record within the selected table](#Inserts-the-given-record-within-the-selected-table)
@@ -35,11 +35,11 @@ $hdb = Hamper::getInstance();
 
 
 ### Data manipulation
-#### Executes the given parametric query
+#### Execute query
 
 `$hdb->query(...)`
 
-
+Executes the given parametric query
 
 [[back to top]](#Documentation)
 

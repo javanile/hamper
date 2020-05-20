@@ -32,8 +32,8 @@ foreach ($sections as $class => $title) {
                 '#### ' . $summary . "\n\n" .
                 '`$hdb->' . $method . '(...)`' . "\n\n" .
                 $description . "\n\n";
-            foreach ($docBlock->getTags() as $tag) {
-                //var_dump($tag);
+            foreach ($docBlock->getTagsByName('example') as $tag) {
+                $documentation .= "```php\n" . $tag->getDescription() . "\n```\n\n";
             }
             $documentation .= '[[back to top]](#Documentation)'."\n\n";
         } catch (ReflectionException $exception) {

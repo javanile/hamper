@@ -41,6 +41,10 @@ $hdb = Hamper::getInstance();
 
 Executes the given parametric query
 
+```php
+$hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"])
+```
+
 [[back to top]](#Documentation)
 
 #### Fetches the next row from the result set rows by the given parametric query

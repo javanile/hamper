@@ -23,33 +23,27 @@ $hdb = Hamper::getInstance();
 ## Documentation
 
 1. [Data manipulation](#Data-manipulation)
-    1. [Execute query](#Execute-query)
-    1. [Fetch one record](#Fetch-one-record)
-    1. [Fetch record list](#Fetch-record-list)
-    1. [Insert one record](#Insert-one-record)
-    1. [Update one record CIAO](#Update-one-record-CIAO)
-    1. [Delete one record](#Delete-one-record)
+    1. [Executes the given parametric query](#Executes-the-given-parametric-query)
+    1. [Fetches the next row from the result set rows by the given parametric query](#Fetches-the-next-row-from-the-result-set-rows-by-the-given-parametric-query)
+    1. [Returns an array containing all of the result set rows by the given parametric query](#Returns-an-array-containing-all-of-the-result-set-rows-by-the-given-parametric-query)
+    1. [Inserts the given record within the selected table](#Inserts-the-given-record-within-the-selected-table)
+    1. [Inserts the given record within the selected table](#Inserts-the-given-record-within-the-selected-table)
+    1. [Updates the given record with the given data](#Updates-the-given-record-with-the-given-data)
+    1. [Deletes the given record within the given table](#Deletes-the-given-record-within-the-given-table)
 1. [Tables manipulation](#Tables-manipulation)
     1. [Create new table](#Create-new-table)
 
 
 ### Data manipulation
-
-#### Execute query
-
-asdkljalsd askdjalòskdjasld aksdjalskdja dasdkjasldkjasd as dalksdjalòskdj
+#### Executes the given parametric query
 
 `$hdb->query(...)`
-
-###### Samples
-asdasdasd
-adasdasd
 
 
 
 [[back to top]](#Documentation)
 
-#### Fetch one record
+#### Fetches the next row from the result set rows by the given parametric query
 
 `$hdb->fetch(...)`
 
@@ -57,7 +51,7 @@ adasdasd
 
 [[back to top]](#Documentation)
 
-#### Fetch record list
+#### Returns an array containing all of the result set rows by the given parametric query
 
 `$hdb->fetchAll(...)`
 
@@ -65,7 +59,7 @@ adasdasd
 
 [[back to top]](#Documentation)
 
-#### Insert one record
+#### Inserts the given record within the selected table
 
 `$hdb->insert(...)`
 
@@ -73,7 +67,15 @@ adasdasd
 
 [[back to top]](#Documentation)
 
-#### Update one record CIAO
+#### Inserts the given record within the selected table
+
+`$hdb->lastInsertId(...)`
+
+
+
+[[back to top]](#Documentation)
+
+#### Updates the given record with the given data
 
 `$hdb->update(...)`
 
@@ -81,7 +83,7 @@ adasdasd
 
 [[back to top]](#Documentation)
 
-#### Delete one record
+#### Deletes the given record within the given table
 
 `$hdb->delete(...)`
 

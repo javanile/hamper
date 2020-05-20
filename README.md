@@ -41,7 +41,7 @@ Executes the given parametric query
 
 ##### Usage 
 
-```Hack
+```Zephir
 $hdb->query($sql, $values)
 ```
 
@@ -71,7 +71,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 ##### Usage 
 
-```Hack
+```Zephir
 query($sql, $params = [], $options = [])
 ```
 
@@ -85,7 +85,7 @@ query($sql, $params = [], $options = [])
 
 ##### Usage 
 
-```Hack
+```Zephir
 query($sql, $params = [], $options = [])
 ```
 
@@ -99,7 +99,7 @@ query($sql, $params = [], $options = [])
 
 ##### Usage 
 
-```Hack
+```Zephir
 query($sql, $params = [], $options = [])
 ```
 
@@ -113,7 +113,7 @@ query($sql, $params = [], $options = [])
 
 ##### Usage 
 
-```Hack
+```Zephir
 query($sql, $params = [], $options = [])
 ```
 
@@ -127,7 +127,7 @@ query($sql, $params = [], $options = [])
 
 ##### Usage 
 
-```Hack
+```Zephir
 query($sql, $params = [], $options = [])
 ```
 
@@ -141,7 +141,7 @@ query($sql, $params = [], $options = [])
 
 ##### Usage 
 
-```Hack
+```Zephir
 query($sql, $params = [], $options = [])
 ```
 
@@ -156,7 +156,7 @@ query($sql, $params = [], $options = [])
 
 ##### Usage 
 
-```Hack
+```Zephir
 query($sql, $params = [], $options = [])
 ```
 

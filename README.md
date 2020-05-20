@@ -39,7 +39,9 @@ $hdb = Hamper::getInstance();
 
 Executes the given parametric query
 
-`$hdb->query(...)`
+##### Usage 
+
+```hdb->query(...)`
 
 ##### Examples
 
@@ -65,7 +67,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
-`$hdb->fetch(...)`
+##### Usage 
+
+```hdb->fetch(...)`
 
 ##### Examples
 
@@ -75,7 +79,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
-`$hdb->fetchAll(...)`
+##### Usage 
+
+```hdb->fetchAll(...)`
 
 ##### Examples
 
@@ -85,7 +91,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
-`$hdb->insert(...)`
+##### Usage 
+
+```hdb->insert(...)`
 
 ##### Examples
 
@@ -95,7 +103,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
-`$hdb->lastInsertId(...)`
+##### Usage 
+
+```hdb->lastInsertId(...)`
 
 ##### Examples
 
@@ -105,7 +115,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
-`$hdb->update(...)`
+##### Usage 
+
+```hdb->update(...)`
 
 ##### Examples
 
@@ -115,7 +127,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
-`$hdb->delete(...)`
+##### Usage 
+
+```hdb->delete(...)`
 
 ##### Examples
 
@@ -126,7 +140,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 
 
-`$hdb->create(...)`
+##### Usage 
+
+```hdb->create(...)`
 
 ##### Examples
 

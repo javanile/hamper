@@ -22,16 +22,16 @@ $hdb = Hamper::getInstance();
 
 ## Documentation
 
-1. [Data manipulation](#Data-manipulation)
-    1. [Execute query](#Execute-query)
-    1. [Fetches the next row from the result set rows by the given parametric query](#Fetches-the-next-row-from-the-result-set-rows-by-the-given-parametric-query)
-    1. [Returns an array containing all of the result set rows by the given parametric query](#Returns-an-array-containing-all-of-the-result-set-rows-by-the-given-parametric-query)
-    1. [Inserts the given record within the selected table](#Inserts-the-given-record-within-the-selected-table)
-    1. [Inserts the given record within the selected table](#Inserts-the-given-record-within-the-selected-table)
-    1. [Updates the given record with the given data](#Updates-the-given-record-with-the-given-data)
-    1. [Deletes the given record within the given table](#Deletes-the-given-record-within-the-given-table)
-1. [Tables manipulation](#Tables-manipulation)
-    1. [Create new table](#Create-new-table)
+* [Data manipulation](#Data-manipulation)
+    * [Execute query](#Execute-query)
+    * [Fetches the next row from the result set rows by the given parametric query](#Fetches-the-next-row-from-the-result-set-rows-by-the-given-parametric-query)
+    * [Returns an array containing all of the result set rows by the given parametric query](#Returns-an-array-containing-all-of-the-result-set-rows-by-the-given-parametric-query)
+    * [Inserts the given record within the selected table](#Inserts-the-given-record-within-the-selected-table)
+    * [Inserts the given record within the selected table](#Inserts-the-given-record-within-the-selected-table)
+    * [Updates the given record with the given data](#Updates-the-given-record-with-the-given-data)
+    * [Deletes the given record within the given table](#Deletes-the-given-record-within-the-given-table)
+* [Tables manipulation](#Tables-manipulation)
+    * [Create new table](#Create-new-table)
 
 
 ### Data manipulation

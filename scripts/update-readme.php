@@ -16,7 +16,7 @@ $sections = [
 ];
 
 foreach ($sections as $class => $title) {
-    $toc .= '1. ['.$title.'](#'.strtr($title, ' ', '-').')'."\n";
+    $toc .= '* ['.$title.'](#'.strtr($title, ' ', '-').')'."\n";
     $documentation .= '### '.$title."\n";
     foreach (get_class_methods($class) as $method) {
         if ($method == '__construct') {
@@ -27,7 +27,7 @@ foreach ($sections as $class => $title) {
             $docBlock = $docBlockFactory ->create($reflection->getDocComment());
             $summary = trim($docBlock->getSummary(), '.');
             $description = $docBlock->getDescription();
-            $toc .= '    1. ['.$summary.'](#'.strtr($summary, ' ', '-').')'."\n";
+            $toc .= '    * ['.$summary.'](#'.strtr($summary, ' ', '-').')'."\n";
             $documentation .=
                 '#### ' . $summary . "\n\n" .
                 '`$hdb->' . $method . '(...)`' . "\n\n" .

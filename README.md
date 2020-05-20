@@ -45,7 +45,9 @@ Executes the given parametric query
 
 ```php
 <?php
+//
 // Execute simple query
+//
 $hdb->query("SET NAMES utf8");
 ```
 

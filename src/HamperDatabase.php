@@ -51,7 +51,9 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * @throws HamperException
      *
-     * @example // Execute simple query
+     * @example //
+     *          // Execute simple query
+     *          //
      *          $hdb->query("SET NAMES utf8");
      *
      * @example // Execute simple query
@@ -185,9 +187,7 @@ class HamperDatabase extends PearDatabaseDecorator
      * Inserts the given record within the selected table.
      *
      * @param string $table The table's name on which the insert has to be executed.
-     * @param mixed $data The data to be inserted into the selected table, in the form of $data = ['field_1' => 'value_1','field_2' => 'value_2'].
-     * @param array $options Any additional option needed.
-     * @throws HamperException
+     * @return mixed
      */
     public function lastInsertId(string $table = '')
     {

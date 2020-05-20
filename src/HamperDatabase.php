@@ -51,6 +51,8 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * @throws HamperException
      *
+     * @usage query($sql, $params = [], $options = [])
+     *
      * @example //
      *          // Execute simple query
      *          //
@@ -88,6 +90,9 @@ class HamperDatabase extends PearDatabaseDecorator
      * @param array $options Any additional option needed.
      * @return array The result set rows.
      * @throws HamperException This exception is thrown if problems with the query arise.
+     *
+     * @usage query($sql, $params = [], $options = [])
+     *
      */
     public function fetch($sql, $params = [], $options = [])
     {
@@ -120,6 +125,8 @@ class HamperDatabase extends PearDatabaseDecorator
      * @param array $options Any additional option needed.
      * @return array The result set rows.
      * @throws HamperException This exception is thrown if problems with the query arise.
+     *
+     * @usage query($sql, $params = [], $options = [])
      */
     public function fetchAll($sql, $params = [], $options = [])
     {
@@ -157,6 +164,8 @@ class HamperDatabase extends PearDatabaseDecorator
      * @param mixed $data The data to be inserted into the selected table, in the form of $data = ['field_1' => 'value_1','field_2' => 'value_2'].
      * @param array $options Any additional option needed.
      * @throws HamperException
+     *
+     * @usage query($sql, $params = [], $options = [])
      */
     public function insert($table, $data, $options=[])
     {
@@ -187,6 +196,8 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * @param string $table The table's name on which the insert has to be executed.
      * @return mixed
+     *
+     * @usage query($sql, $params = [], $options = [])
      */
     public function lastInsertId(string $table = '')
     {
@@ -201,6 +212,8 @@ class HamperDatabase extends PearDatabaseDecorator
      * @param mixed $data The data to be updated into the selected table, in the form of $data = ['field_1' => 'value_1','field_2' => 'value_2'].
      * @param array $options Any additional option needed.
      * @throws HamperException
+     *
+     * @usage query($sql, $params = [], $options = [])
      */
     public function update($table, $key, $data, $options = [])
     {
@@ -246,6 +259,8 @@ class HamperDatabase extends PearDatabaseDecorator
      * @param $value
      * @param array $options Any additional option needed.
      * @throws HamperException
+     *
+     * @usage query($sql, $params = [], $options = [])
      */
     public function delete($table, $key, $value, $options = [])
     {

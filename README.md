@@ -41,7 +41,7 @@ Executes the given parametric query
 
 ##### Usage 
 
-```hdb->query(...)`
+```$hdb->query($sql, $values)```
 
 ##### Examples
 
@@ -69,7 +69,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 ##### Usage 
 
-```hdb->fetch(...)`
+```query($sql, $params = [], $options = [])```
 
 ##### Examples
 
@@ -81,7 +81,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 ##### Usage 
 
-```hdb->fetchAll(...)`
+```query($sql, $params = [], $options = [])```
 
 ##### Examples
 
@@ -93,7 +93,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 ##### Usage 
 
-```hdb->insert(...)`
+```query($sql, $params = [], $options = [])```
 
 ##### Examples
 
@@ -105,7 +105,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 ##### Usage 
 
-```hdb->lastInsertId(...)`
+```query($sql, $params = [], $options = [])```
 
 ##### Examples
 
@@ -117,7 +117,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 ##### Usage 
 
-```hdb->update(...)`
+```query($sql, $params = [], $options = [])```
 
 ##### Examples
 
@@ -129,7 +129,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 ##### Usage 
 
-```hdb->delete(...)`
+```query($sql, $params = [], $options = [])```
 
 ##### Examples
 
@@ -142,7 +142,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 ##### Usage 
 
-```hdb->create(...)`
+```query($sql, $params = [], $options = [])```
 
 ##### Examples
 

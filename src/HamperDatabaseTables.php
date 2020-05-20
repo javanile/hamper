@@ -9,6 +9,8 @@ class HamperDatabaseTables extends PearDatabaseDecorator
      *
      * @param $table
      * @param $fields
+     *
+     * @usage query($sql, $params = [], $options = [])
      */
     public function create($table, $fields)
     {

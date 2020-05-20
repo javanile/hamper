@@ -23,6 +23,7 @@ foreach ($sections as $class => $title) {
             continue;
         }
         try {
+            echo "> {$class}::{$method}\n";
             $reflection = new ReflectionMethod($class, $method);
             $docBlock = $docBlockFactory ->create($reflection->getDocComment());
             $summary = trim($docBlock->getSummary(), '.');
@@ -30,7 +31,7 @@ foreach ($sections as $class => $title) {
             $toc .= '    * ['.$summary.'](#'.strtr($summary, ' ', '-').')'."\n";
             $documentation .= '#### ' . $summary . "\n\n";
             $documentation .= $description . "\n\n";
-            $documentation .= "##### Usage \n\n```hdb->" . $method . '(...)`' . "\n\n";
+            $documentation .= "##### Usage \n\n```" . $docBlock->getTagsByName('usage')[0]->getDescription() . '```' . "\n\n";
             $documentation .= "##### Examples\n\n";
             foreach ($docBlock->getTagsByName('example') as $tag) {
                 $documentation .= "```php\n<?php\n" . $tag->getDescription() . "\n```\n\n";

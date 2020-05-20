@@ -42,7 +42,7 @@ Executes the given parametric query
 ##### Usage 
 
 ```
-$hdb->query($sql, $values)
+query($sql, $params = [], $options = [])
 ```
 
 ##### Examples

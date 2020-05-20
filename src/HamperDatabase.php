@@ -43,8 +43,6 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * Executes the given parametric query
      *
-     * @usage $hdb->query($sql, $values)
-     *
      * @param string $sql The SQL parametric query to be sent.
      * @param array $params The parameters in use within the parametric query sent.
      * @param array $options Any additional option needed.

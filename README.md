@@ -53,13 +53,9 @@ $hdb->query("SET NAMES utf8");
 
 ```php
 <?php
-// Execute simple query
-$hdb->query("SET NAMES utf8");
-```
-
-```php
-<?php
+//
 // Execute prepare query
+//
 $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
 ```
 

@@ -2,17 +2,18 @@
 
 namespace Javanile\Hamper;
 
+
 class Hamper
 {
     /**
-     * @var
+     * @var HamperDatabase
      */
     protected static $instance;
 
     /**
-     *
+     * Get singletone instance of database.
      */
-    public function getInstance()
+    public static function getInstance()
     {
         if (self::$instance === null) {
             $pdb = \PearDatabase::getInstance();

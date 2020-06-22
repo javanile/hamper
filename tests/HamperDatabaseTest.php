@@ -68,6 +68,24 @@ class HamperDatabaseTest extends TestCase
         $this->hdb->fetchAll("POINTLESS BROKEN QUERY");
     }
 
+    public function testExists()
+    {
+        $data = [
+            'field1' => md5(time().rand()).'1',
+            'field2' => md5(time().rand()).'2',
+        ];
+
+        try {
+            $this->hdb->query("CREATE TABLE IF NOT EXISTS test (field1 TEXT, field2 TEXT)");
+            $res = $this->hdb->insert("test", $data);
+            $this->assertTrue(is_object($res));
+            $this->assertTrue($this->hdb->exists("test", "field1", $data['field1']));
+            $this->assertFalse($this->hdb->exists("test", "field1", $data['field2']));
+        } catch (HamperException $e) {
+            die($e->getMessage());
+        }
+    }
+
     public function testInsert()
     {
         $data = [

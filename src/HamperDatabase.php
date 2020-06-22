@@ -159,6 +159,45 @@ class HamperDatabase extends PearDatabaseDecorator
      * Inserts the given record within the selected table.
      *
      * @param string $table The table's name on which the insert has to be executed.
+     * @param $key
+     * @param $value
+     * @param array $options Any additional option needed.
+     *
+     * @return bool
+     * @throws HamperException
+     * @usage query($sql, $params = [], $options = [])
+     */
+    public function exists($table, $key, $value, $options=[])
+    {
+        $sql = "SELECT `${key}` FROM `{$table}` WHERE `${key}` = ? LIMIT 1";
+
+        $handler = OptionsHandlerFactory::createInstance($options);
+        $results = $this->pearDatabase->pquery($sql, [$value], $handler->dieOnError, $handler->message);
+
+        if (!$results) {
+            throw HamperException::forSqlError(array(
+                'backtrace' => debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1),
+                'pearDatabase' => $this->pearDatabase,
+                //'sql' => $sql,
+                //'params' => $params,
+                //'dieOnError' => $handler->dieOnError,
+                //'message' => $handler->message
+            ));
+        }
+
+        try {
+            return boolval($this->pearDatabase->query_result_rowdata($results));
+        } catch (\Exception $e) {
+            // The above HamperException prevent this legacy exception
+        }
+
+        return false;
+    }
+
+    /**
+     * Inserts the given record within the selected table.
+     *
+     * @param string $table The table's name on which the insert has to be executed.
      * @param mixed $data The data to be inserted into the selected table, in the form of $data = ['field_1' => 'value_1','field_2' => 'value_2'].
      * @param array $options Any additional option needed.
      * @throws HamperException

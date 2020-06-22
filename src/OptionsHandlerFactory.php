@@ -8,7 +8,7 @@ class OptionsHandlerFactory
      * @param array $options
      * @return OptionsHandler
      */
-    public function createInstance($options = [])
+    public static function createInstance($options = [])
     {
         return new OptionsHandler($options);
     }

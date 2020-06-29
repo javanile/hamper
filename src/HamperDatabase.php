@@ -268,7 +268,7 @@ class HamperDatabase extends PearDatabaseDecorator
             ));
         }
 
-        $fields = implode(' = ?,', array_keys($data)) . ' = ?';
+        $fields = '`' . implode('` = ?, `', array_keys($data)) . '` = ?';
         $params = array_merge(array_values($data), [$data[$key]]);
 
         $sql = "UPDATE `{$table}` SET {$fields} WHERE `{$key}` = ?";

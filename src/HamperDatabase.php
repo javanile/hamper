@@ -73,6 +73,8 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
+     * Get a single record.
+     *
      * Fetches the next row from the result set rows by the given parametric query.
      *
      * @param string $sql The SQL parametric query to be sent.
@@ -108,7 +110,9 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
-     *  Returns an array containing all of the result set rows by the given parametric query.
+     * Get a list of records.
+     *
+     * Returns an array containing all of the result set rows by the given parametric query.
      *
      * @param string $sql The SQL parametric query to be sent.
      * @param array $params The parameters in use within the parametric query sent.
@@ -148,7 +152,9 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
-     * Inserts the given record within the selected table.
+     * Check if record exists.
+     *
+     * Execute a query to check if record with specific key and value exists.
      *
      * @param string $table The table's name on which the insert has to be executed.
      * @param $key
@@ -187,6 +193,8 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
+     * Insert a record.
+     *
      * Inserts the given record within the selected table.
      *
      * @param string $table The table's name on which the insert has to be executed.
@@ -221,7 +229,9 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
-     * Inserts the given record within the selected table.
+     * Get last ID.
+     *
+     * Return last insert ID value for the selected table.
      *
      * @param string $table The table's name on which the insert has to be executed.
      * @return mixed
@@ -234,6 +244,8 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
+     * Update a single record.
+     *
      * Updates the given record with the given data.
      *
      * @param mixed $table The table on which the update has to be executed.
@@ -281,6 +293,8 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
+     * Delete a single record.
+     *
      * Deletes the given record within the given table.
      *
      * @param mixed $table The table and record on which the delete has to be executed.

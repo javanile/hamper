@@ -32,13 +32,13 @@ since DBs are as important as any other logical element, and so it should
 be their ability to be unit-tested constantly and with ease
 
  * [Execute query](#Execute-query)
- * [Fetches the next row from the result set rows by the given parametric query](#Fetches-the-next-row-from-the-result-set-rows-by-the-given-parametric-query)
- * [Returns an array containing all of the result set rows by the given parametric query](#Returns-an-array-containing-all-of-the-result-set-rows-by-the-given-parametric-query)
- * [Inserts the given record within the selected table](#Inserts-the-given-record-within-the-selected-table)
- * [Inserts the given record within the selected table](#Inserts-the-given-record-within-the-selected-table)
- * [Inserts the given record within the selected table](#Inserts-the-given-record-within-the-selected-table)
- * [Updates the given record with the given data](#Updates-the-given-record-with-the-given-data)
- * [Deletes the given record within the given table](#Deletes-the-given-record-within-the-given-table)
+ * [Get a single record](#Get-a-single-record)
+ * [Get a list of records](#Get-a-list-of-records)
+ * [Check if record exists](#Check-if-record-exists)
+ * [Insert a record](#Insert-a-record)
+ * [Get last ID](#Get-last-ID)
+ * [Update a single record](#Update-a-single-record)
+ * [Delete a single record](#Delete-a-single-record)
 #### Tables manipulation
 
 Class HamperDatabaseTables
@@ -80,25 +80,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 <hr/>
 
-### Fetches the next row from the result set rows by the given parametric query
+### Get a single record
 
-
-
-#### Usage 
-
-```
-query($sql, $params = [], $options = [])
-```
-
-#### Examples
-
-[[back to top]](#Documentation)
-
-<hr/>
-
-### Returns an array containing all of the result set rows by the given parametric query
-
-
+Fetches the next row from the result set rows by the given parametric query.
 
 #### Usage 
 
@@ -112,25 +96,9 @@ query($sql, $params = [], $options = [])
 
 <hr/>
 
-### Inserts the given record within the selected table
+### Get a list of records
 
-
-
-#### Usage 
-
-```
-query($sql, $params = [], $options = [])
-```
-
-#### Examples
-
-[[back to top]](#Documentation)
-
-<hr/>
-
-### Inserts the given record within the selected table
-
-
+Returns an array containing all of the result set rows by the given parametric query.
 
 #### Usage 
 
@@ -144,25 +112,9 @@ query($sql, $params = [], $options = [])
 
 <hr/>
 
-### Inserts the given record within the selected table
+### Check if record exists
 
-
-
-#### Usage 
-
-```
-query($sql, $params = [], $options = [])
-```
-
-#### Examples
-
-[[back to top]](#Documentation)
-
-<hr/>
-
-### Updates the given record with the given data
-
-
+Execute a query to check if record with specific key and value exists.
 
 #### Usage 
 
@@ -176,9 +128,57 @@ query($sql, $params = [], $options = [])
 
 <hr/>
 
-### Deletes the given record within the given table
+### Insert a record
 
+Inserts the given record within the selected table.
 
+#### Usage 
+
+```
+query($sql, $params = [], $options = [])
+```
+
+#### Examples
+
+[[back to top]](#Documentation)
+
+<hr/>
+
+### Get last ID
+
+Return last insert ID value for the selected table.
+
+#### Usage 
+
+```
+query($sql, $params = [], $options = [])
+```
+
+#### Examples
+
+[[back to top]](#Documentation)
+
+<hr/>
+
+### Update a single record
+
+Updates the given record with the given data.
+
+#### Usage 
+
+```
+query($sql, $params = [], $options = [])
+```
+
+#### Examples
+
+[[back to top]](#Documentation)
+
+<hr/>
+
+### Delete a single record
+
+Deletes the given record within the given table.
 
 #### Usage 
 

@@ -3,7 +3,9 @@
 namespace Javanile\Hamper;
 
 /**
- * Class HamperDatabaseTables
+ * Class HamperDatabaseTables.
+ *
+ * The following methods are used to manipulate database tables and fields.
  *
  * @package Javanile\Hamper
  */

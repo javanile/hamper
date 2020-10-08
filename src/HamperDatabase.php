@@ -5,10 +5,9 @@ namespace Javanile\Hamper;
 use Javanile\Hamper\PearDatabaseDecorator;
 
 /**
- * The long-term intentions of this own wrapper is to facilitate the usage
- * of PearDatabase and to make unit-testing available to any vTiger developer
- * since DBs are as important as any other logical element, and so it should
- * be their ability to be unit-tested constantly and with ease.
+ * Class HamperDatabase.
+ *
+ * The following methods are used to manipulate records into database.
  *
  * @package Javanile\Hamper
  */

@@ -2,6 +2,11 @@
 
 namespace Javanile\Hamper;
 
+/**
+ * Class HamperDatabaseTables
+ *
+ * @package Javanile\Hamper
+ */
 class HamperDatabaseTables extends PearDatabaseDecorator
 {
     /**

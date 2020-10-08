@@ -15,6 +15,8 @@ composer require javanile/hamper
 You simply get your `$hdb` object to access on database
 
 ```php
+require_once 'vendor/autoload.php';
+
 use Javanile\Hamper\Hamper;
 
 $hdb = Hamper::getInstance();
@@ -23,29 +25,29 @@ $hdb = Hamper::getInstance();
 ## Documentation
 
 * [Data manipulation](#Data-manipulation)
-    * [Execute query](#Execute-query)
-    * [Fetches the next row from the result set rows by the given parametric query](#Fetches-the-next-row-from-the-result-set-rows-by-the-given-parametric-query)
-    * [Returns an array containing all of the result set rows by the given parametric query](#Returns-an-array-containing-all-of-the-result-set-rows-by-the-given-parametric-query)
-    * [Inserts the given record within the selected table](#Inserts-the-given-record-within-the-selected-table)
-    * [Inserts the given record within the selected table](#Inserts-the-given-record-within-the-selected-table)
-    * [Updates the given record with the given data](#Updates-the-given-record-with-the-given-data)
-    * [Deletes the given record within the given table](#Deletes-the-given-record-within-the-given-table)
+  * [Execute query](#Execute-query)
+  * [Fetches the next row from the result set rows by the given parametric query](#Fetches-the-next-row-from-the-result-set-rows-by-the-given-parametric-query)
+  * [Returns an array containing all of the result set rows by the given parametric query](#Returns-an-array-containing-all-of-the-result-set-rows-by-the-given-parametric-query)
+  * [Inserts the given record within the selected table](#Inserts-the-given-record-within-the-selected-table)
+  * [Inserts the given record within the selected table](#Inserts-the-given-record-within-the-selected-table)
+  * [Inserts the given record within the selected table](#Inserts-the-given-record-within-the-selected-table)
+  * [Updates the given record with the given data](#Updates-the-given-record-with-the-given-data)
+  * [Deletes the given record within the given table](#Deletes-the-given-record-within-the-given-table)
 * [Tables manipulation](#Tables-manipulation)
-    * [Create new table](#Create-new-table)
+  * [Create new table](#Create-new-table)
 
 
-### Data manipulation
-#### Execute query
+### Execute query
 
 Executes the given parametric query
 
-##### Usage 
+#### Usage 
 
 ```
 query($sql, $params = [], $options = [])
 ```
 
-##### Examples
+#### Examples
 
 ```php
 <?php
@@ -67,114 +69,129 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 <hr/>
 
-#### Fetches the next row from the result set rows by the given parametric query
+### Fetches the next row from the result set rows by the given parametric query
 
 
 
-##### Usage 
+#### Usage 
 
 ```
 query($sql, $params = [], $options = [])
 ```
 
-##### Examples
+#### Examples
 
 [[back to top]](#Documentation)
 
 <hr/>
 
-#### Returns an array containing all of the result set rows by the given parametric query
+### Returns an array containing all of the result set rows by the given parametric query
 
 
 
-##### Usage 
+#### Usage 
 
 ```
 query($sql, $params = [], $options = [])
 ```
 
-##### Examples
+#### Examples
 
 [[back to top]](#Documentation)
 
 <hr/>
 
-#### Inserts the given record within the selected table
+### Inserts the given record within the selected table
 
 
 
-##### Usage 
+#### Usage 
 
 ```
 query($sql, $params = [], $options = [])
 ```
 
-##### Examples
+#### Examples
 
 [[back to top]](#Documentation)
 
 <hr/>
 
-#### Inserts the given record within the selected table
+### Inserts the given record within the selected table
 
 
 
-##### Usage 
+#### Usage 
 
 ```
 query($sql, $params = [], $options = [])
 ```
 
-##### Examples
+#### Examples
 
 [[back to top]](#Documentation)
 
 <hr/>
 
-#### Updates the given record with the given data
+### Inserts the given record within the selected table
 
 
 
-##### Usage 
+#### Usage 
 
 ```
 query($sql, $params = [], $options = [])
 ```
 
-##### Examples
+#### Examples
 
 [[back to top]](#Documentation)
 
 <hr/>
 
-#### Deletes the given record within the given table
+### Updates the given record with the given data
 
 
 
-##### Usage 
+#### Usage 
 
 ```
 query($sql, $params = [], $options = [])
 ```
 
-##### Examples
+#### Examples
 
 [[back to top]](#Documentation)
 
 <hr/>
 
-### Tables manipulation
-#### Create new table
+### Deletes the given record within the given table
 
 
 
-##### Usage 
+#### Usage 
 
 ```
 query($sql, $params = [], $options = [])
 ```
 
-##### Examples
+#### Examples
+
+[[back to top]](#Documentation)
+
+<hr/>
+
+### Create new table
+
+
+
+#### Usage 
+
+```
+query($sql, $params = [], $options = [])
+```
+
+#### Examples
 
 [[back to top]](#Documentation)
 

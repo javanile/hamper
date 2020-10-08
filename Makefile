@@ -7,14 +7,14 @@ install-composer:
 	docker-compose run --rm vtiger curl -sS https://getcomposer.org/installer -o ./scripts/composer-installer.php
 	docker-compose run --rm vtiger php ./scripts/composer-installer.php -- --install-dir=./scripts --filename=composer
 install: init
-	docker-compose run --rm -u $$(id -u) vtiger php ./scripts/composer install
+	docker-compose run --rm vtiger php ./scripts/composer install
 update:
 	docker-compose run --rm vtiger php ./scripts/composer update $(take)
 require:
 	docker-compose run --rm vtiger php ./scripts/composer require $(take)
 dump-autoload:
 	docker-compose run --rm vtiger php ./scripts/composer dump-autoload
-update-readme:
+update-readme: init
 	docker-compose run --rm vtiger php ./scripts/update-readme.php
 up:
 	docker-compose up -d

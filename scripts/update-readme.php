@@ -17,7 +17,6 @@ $sections = [
 
 foreach ($sections as $class => $title) {
     $toc .= '* ['.$title.'](#'.strtr($title, ' ', '-').')'."\n";
-    $documentation .= '### '.$title."\n";
     foreach (get_class_methods($class) as $method) {
         if ($method == '__construct') {
             continue;
@@ -29,11 +28,11 @@ foreach ($sections as $class => $title) {
             $summary = trim($docBlock->getSummary(), '.');
             $description = $docBlock->getDescription();
             $usage = $docBlock->getTagsByName('usage')[0];
-            $toc .= '    * ['.$summary.'](#'.strtr($summary, ' ', '-').')'."\n";
-            $documentation .= '#### ' . $summary . "\n\n";
+            $toc .= '  * ['.$summary.'](#'.strtr($summary, ' ', '-').')'."\n";
+            $documentation .= '### ' . $summary . "\n\n";
             $documentation .= $description . "\n\n";
-            $documentation .= "##### Usage \n\n```\n" . $usage->getDescription() . "\n```\n\n";
-            $documentation .= "##### Examples\n\n";
+            $documentation .= "#### Usage \n\n```\n" . $usage->getDescription() . "\n```\n\n";
+            $documentation .= "#### Examples\n\n";
             foreach ($docBlock->getTagsByName('example') as $tag) {
                 $documentation .= "```php\n<?php\n" . $tag->getDescription() . "\n```\n\n";
             }

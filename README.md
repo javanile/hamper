@@ -24,10 +24,13 @@ $hdb = Hamper::getInstance();
 
 ## Documentation
 
-**Data manipulation:** The long-term intentions of this own wrapper is to facilitate the usage
+#### Data manipulation
+
+The long-term intentions of this own wrapper is to facilitate the usage
 of PearDatabase and to make unit-testing available to any vTiger developer
 since DBs are as important as any other logical element, and so it should
 be their ability to be unit-tested constantly and with ease
+
  * [Execute query](#Execute-query)
  * [Fetches the next row from the result set rows by the given parametric query](#Fetches-the-next-row-from-the-result-set-rows-by-the-given-parametric-query)
  * [Returns an array containing all of the result set rows by the given parametric query](#Returns-an-array-containing-all-of-the-result-set-rows-by-the-given-parametric-query)
@@ -36,7 +39,10 @@ be their ability to be unit-tested constantly and with ease
  * [Inserts the given record within the selected table](#Inserts-the-given-record-within-the-selected-table)
  * [Updates the given record with the given data](#Updates-the-given-record-with-the-given-data)
  * [Deletes the given record within the given table](#Deletes-the-given-record-within-the-given-table)
-**Tables manipulation:** Class HamperDatabaseTables
+#### Tables manipulation
+
+Class HamperDatabaseTables
+
  * [Create new table](#Create-new-table)
 
 

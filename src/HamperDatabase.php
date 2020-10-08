@@ -40,7 +40,7 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * @throws HamperException
      *
-     * @usage query($sql, $params = [], $options = [])
+     * @usage $hdb->query($sql, $params = [], $options = [])
      *
      * @example //
      *          // Execute simple query
@@ -82,8 +82,17 @@ class HamperDatabase extends PearDatabaseDecorator
      * @return array The result set rows.
      * @throws HamperException This exception is thrown if problems with the query arise.
      *
-     * @usage query($sql, $params = [], $options = [])
+     * @usage $hdb->fetch($sql, $params = [], $options = [])
      *
+     * @example //
+     *          // Execute simple query
+     *          //
+     *          $hdb->query("SET NAMES utf8");
+     *
+     * @example //
+     *          // Execute prepare query
+     *          //
+     *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function fetch($sql, $params = [], $options = [])
     {
@@ -120,6 +129,16 @@ class HamperDatabase extends PearDatabaseDecorator
      * @throws HamperException This exception is thrown if problems with the query arise.
      *
      * @usage query($sql, $params = [], $options = [])
+     *
+     * @example //
+     *          // Execute simple query
+     *          //
+     *          $hdb->query("SET NAMES utf8");
+     *
+     * @example //
+     *          // Execute prepare query
+     *          //
+     *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function fetchAll($sql, $params = [], $options = [])
     {
@@ -162,7 +181,18 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * @return bool
      * @throws HamperException
+     *
      * @usage query($sql, $params = [], $options = [])
+     *
+     * @example //
+     *          // Execute simple query
+     *          //
+     *          $hdb->query("SET NAMES utf8");
+     *
+     * @example //
+     *          // Execute prepare query
+     *          //
+     *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function exists($table, $key, $value, $options=[])
     {
@@ -202,6 +232,16 @@ class HamperDatabase extends PearDatabaseDecorator
      * @throws HamperException
      *
      * @usage query($sql, $params = [], $options = [])
+     *
+     * @example //
+     *          // Execute simple query
+     *          //
+     *          $hdb->query("SET NAMES utf8");
+     *
+     * @example //
+     *          // Execute prepare query
+     *          //
+     *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function insert($table, $data, $options=[])
     {
@@ -236,6 +276,16 @@ class HamperDatabase extends PearDatabaseDecorator
      * @return mixed
      *
      * @usage query($sql, $params = [], $options = [])
+     *
+     * @example //
+     *          // Execute simple query
+     *          //
+     *          $hdb->query("SET NAMES utf8");
+     *
+     * @example //
+     *          // Execute prepare query
+     *          //
+     *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function lastInsertId(string $table = '')
     {
@@ -254,6 +304,16 @@ class HamperDatabase extends PearDatabaseDecorator
      * @throws HamperException
      *
      * @usage query($sql, $params = [], $options = [])
+     *
+     * @example //
+     *          // Execute simple query
+     *          //
+     *          $hdb->query("SET NAMES utf8");
+     *
+     * @example //
+     *          // Execute prepare query
+     *          //
+     *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function update($table, $key, $data, $options = [])
     {
@@ -303,6 +363,16 @@ class HamperDatabase extends PearDatabaseDecorator
      * @throws HamperException
      *
      * @usage query($sql, $params = [], $options = [])
+     *
+     * @example //
+     *          // Execute simple query
+     *          //
+     *          $hdb->query("SET NAMES utf8");
+     *
+     * @example //
+     *          // Execute prepare query
+     *          //
+     *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function delete($table, $key, $value, $options = [])
     {

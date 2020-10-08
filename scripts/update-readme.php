@@ -11,16 +11,16 @@ $documentation = "<hr/>"."\n\n";
 $docBlockFactory = DocBlockFactory::createInstance();
 
 $sections = [
-    HamperDatabase::class => 'Data manipulation',
-    HamperDatabaseTables::class => 'Tables manipulation',
+    HamperDatabase::class,
+    HamperDatabaseTables::class,
 ];
 
 try {
-    foreach ($sections as $class => $title) {
+    foreach ($sections as $class) {
         $reflection = new ReflectionClass($class);
         $docBlock = $docBlockFactory->create($reflection->getDocComment());
-        $summary = trim($docBlock->getSummary(), '.');
-        $toc .= '#### '.$title."\n\n".$summary."\n\n";
+        $description = trim($docBlock->getDescription(), '.');
+        $toc .= $description."\n\n";
         foreach (get_class_methods($class) as $method) {
             if ($method == '__construct') {
                 continue;

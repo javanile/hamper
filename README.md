@@ -24,9 +24,7 @@ $hdb = Hamper::getInstance();
 
 ## Documentation
 
-#### Data manipulation
-
-Class HamperDatabase
+The following methods are used to manipulate records into database
 
  * [Execute query](#Execute-query)
  * [Get a single record](#Get-a-single-record)
@@ -36,9 +34,7 @@ Class HamperDatabase
  * [Get last ID](#Get-last-ID)
  * [Update a single record](#Update-a-single-record)
  * [Delete a single record](#Delete-a-single-record)
-#### Tables manipulation
-
-Class HamperDatabaseTables
+The following methods are used to manipulate database tables and fields
 
  * [Create new table](#Create-new-table)
 
@@ -52,7 +48,7 @@ Executes the given parametric query
 #### Usage 
 
 ```
-query($sql, $params = [], $options = [])
+$hdb->query($sql, $params = [], $options = [])
 ```
 
 #### Examples
@@ -84,10 +80,26 @@ Fetches the next row from the result set rows by the given parametric query.
 #### Usage 
 
 ```
-query($sql, $params = [], $options = [])
+$hdb->fetch($sql, $params = [], $options = [])
 ```
 
 #### Examples
+
+```php
+<?php
+//
+// Execute simple query
+//
+$hdb->query("SET NAMES utf8");
+```
+
+```php
+<?php
+//
+// Execute prepare query
+//
+$hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
+```
 
 [[back to top]](#Documentation)
 
@@ -105,6 +117,22 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
+```php
+<?php
+//
+// Execute simple query
+//
+$hdb->query("SET NAMES utf8");
+```
+
+```php
+<?php
+//
+// Execute prepare query
+//
+$hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
+```
+
 [[back to top]](#Documentation)
 
 <hr/>
@@ -120,6 +148,22 @@ query($sql, $params = [], $options = [])
 ```
 
 #### Examples
+
+```php
+<?php
+//
+// Execute simple query
+//
+$hdb->query("SET NAMES utf8");
+```
+
+```php
+<?php
+//
+// Execute prepare query
+//
+$hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
+```
 
 [[back to top]](#Documentation)
 
@@ -137,6 +181,22 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
+```php
+<?php
+//
+// Execute simple query
+//
+$hdb->query("SET NAMES utf8");
+```
+
+```php
+<?php
+//
+// Execute prepare query
+//
+$hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
+```
+
 [[back to top]](#Documentation)
 
 <hr/>
@@ -152,6 +212,22 @@ query($sql, $params = [], $options = [])
 ```
 
 #### Examples
+
+```php
+<?php
+//
+// Execute simple query
+//
+$hdb->query("SET NAMES utf8");
+```
+
+```php
+<?php
+//
+// Execute prepare query
+//
+$hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
+```
 
 [[back to top]](#Documentation)
 
@@ -169,6 +245,22 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
+```php
+<?php
+//
+// Execute simple query
+//
+$hdb->query("SET NAMES utf8");
+```
+
+```php
+<?php
+//
+// Execute prepare query
+//
+$hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
+```
+
 [[back to top]](#Documentation)
 
 <hr/>
@@ -184,6 +276,22 @@ query($sql, $params = [], $options = [])
 ```
 
 #### Examples
+
+```php
+<?php
+//
+// Execute simple query
+//
+$hdb->query("SET NAMES utf8");
+```
+
+```php
+<?php
+//
+// Execute prepare query
+//
+$hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
+```
 
 [[back to top]](#Documentation)
 

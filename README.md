@@ -1,6 +1,13 @@
-# hamper
+# Hamper DB
 
-Developer friendly database library for vtiger
+Developer friendly database library for vtiger. Hamper improove the code quality and the readbility of your PHP code around database access and manipulation.
+
+## Why I use it?
+
+Here is a list of compelling reasons to use it
+
+- Avoid old-style loop over results. 
+- Use by default associative array for fields.
 
 ## Installation
 

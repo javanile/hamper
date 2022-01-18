@@ -130,14 +130,10 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * @usage query($sql, $params = [], $options = [])
      *
-     * @example //
-     *          // Execute simple query
-     *          //
+     * @example // Execute simple query
      *          $hdb->query("SET NAMES utf8");
      *
-     * @example //
-     *          // Execute prepare query
-     *          //
+     * @example // Execute prepare query
      *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function fetchAll($sql, $params = [], $options = [])
@@ -226,14 +222,10 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * @usage query($sql, $params = [], $options = [])
      *
-     * @example //
-     *          // Execute simple query
-     *          //
+     * @example // Execute simple query
      *          $hdb->query("SET NAMES utf8");
      *
-     * @example //
-     *          // Execute prepare query
-     *          //
+     * @example // Execute prepare query
      *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function value($table, $key, $value, $options=[])
@@ -278,14 +270,10 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * @usage query($sql, $params = [], $options = [])
      *
-     * @example //
-     *          // Execute simple query
-     *          //
+     * @example // Execute simple query
      *          $hdb->query("SET NAMES utf8");
      *
-     * @example //
-     *          // Execute prepare query
-     *          //
+     * @example // Execute prepare query
      *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function exists($table, $key, $value, $options=[])
@@ -327,14 +315,10 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * @usage query($sql, $params = [], $options = [])
      *
-     * @example //
-     *          // Execute simple query
-     *          //
+     * @example // Execute simple query
      *          $hdb->query("SET NAMES utf8");
      *
-     * @example //
-     *          // Execute prepare query
-     *          //
+     * @example // Execute prepare query
      *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function insert($table, $data, $options=[])
@@ -371,14 +355,10 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * @usage query($sql, $params = [], $options = [])
      *
-     * @example //
-     *          // Execute simple query
-     *          //
+     * @example // Execute simple query
      *          $hdb->query("SET NAMES utf8");
      *
-     * @example //
-     *          // Execute prepare query
-     *          //
+     * @example // Execute prepare query
      *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function lastInsertId(string $table = '')
@@ -399,14 +379,10 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * @usage query($sql, $params = [], $options = [])
      *
-     * @example //
-     *          // Execute simple query
-     *          //
+     * @example // Execute simple query
      *          $hdb->query("SET NAMES utf8");
      *
-     * @example //
-     *          // Execute prepare query
-     *          //
+     * @example // Execute prepare query
      *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function update($table, $key, $data, $options = [])
@@ -458,14 +434,10 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * @usage query($sql, $params = [], $options = [])
      *
-     * @example //
-     *          // Execute simple query
-     *          //
+     * @example // Execute simple query
      *          $hdb->query("SET NAMES utf8");
      *
-     * @example //
-     *          // Execute prepare query
-     *          //
+     * @example // Execute prepare query
      *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function delete($table, $key, $value, $options = [])

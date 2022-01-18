@@ -33,19 +33,19 @@ $hdb = Hamper::getInstance();
 
 #### The following methods are used to manipulate records into database
 
- * [Execute query](#Execute-query)
- * [Get a single record](#Get-a-single-record)
- * [Get a list of records](#Get-a-list-of-records)
- * [Single value by query](#Single-value-by-query)
- * [Get value from if record exists](#Get-value-from-if-record-exists)
- * [Check if record exists](#Check-if-record-exists)
- * [Insert a record](#Insert-a-record)
- * [Get last ID](#Get-last-ID)
- * [Update a single record](#Update-a-single-record)
- * [Delete a single record](#Delete-a-single-record)
+ * [Execute query](#Execute-query) - `query`
+ * [Get a single record](#Get-a-single-record) - `fetch`
+ * [Get a list of records](#Get-a-list-of-records) - `fetchAll`
+ * [Get a value from record](#Get-a-value-from-record) - `fetchValue`
+ * [Get value from if record exists](#Get-value-from-if-record-exists) - `value`
+ * [Check if record exists](#Check-if-record-exists) - `exists`
+ * [Insert a record](#Insert-a-record) - `insert`
+ * [Get last ID](#Get-last-ID) - `lastInsertId`
+ * [Update a single record](#Update-a-single-record) - `update`
+ * [Delete a single record](#Delete-a-single-record) - `delete`
 #### The following methods are used to manipulate database tables and fields
 
- * [Create new table](#Create-new-table)
+ * [Create new table](#Create-new-table) - `create`
 
 
 <hr/>
@@ -152,7 +152,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 <hr/>
 
-### Single value by query
+### Get a value from record
 
 Fetches the next row from the result set rows by the given parametric query.
 

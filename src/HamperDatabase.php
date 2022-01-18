@@ -170,7 +170,7 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
-     * Single value by query.
+     * Get a value from record.
      *
      * Fetches the next row from the result set rows by the given parametric query.
      *

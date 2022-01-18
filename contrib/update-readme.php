@@ -43,7 +43,7 @@ try {
             foreach ($docBlock->getTagsByName('legacy') as $tag) {
                 $documentation .= "```php\n" . $tag->getDescription() . "\n```\n\n";
             }
-            $documentation .= '[[back to top]](#Documentation)'."\n\n";
+            $documentation .= '[[back to top]](#documentation)'."\n\n";
             $documentation .= "<hr/>"."\n\n";
         }
     }

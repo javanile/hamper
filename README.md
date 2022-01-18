@@ -78,7 +78,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 This method replace this kind of legacy code
 
-[[back to top]](#Documentation)
+[[back to top]](#documentation)
 
 <hr/>
 
@@ -110,7 +110,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 This method replace this kind of legacy code
 
-[[back to top]](#Documentation)
+[[back to top]](#documentation)
 
 <hr/>
 
@@ -142,7 +142,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 This method replace this kind of legacy code
 
-[[back to top]](#Documentation)
+[[back to top]](#documentation)
 
 <hr/>
 
@@ -174,7 +174,7 @@ $result = $adb->pquery("SELECT tabid FROM vtiger_tab WHERE name=?", [$setype]);
 $tabId = $adb->query_result($result, 0, "tabid");
 ```
 
-[[back to top]](#Documentation)
+[[back to top]](#documentation)
 
 <hr/>
 
@@ -206,7 +206,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 This method replace this kind of legacy code
 
-[[back to top]](#Documentation)
+[[back to top]](#documentation)
 
 <hr/>
 
@@ -238,7 +238,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 This method replace this kind of legacy code
 
-[[back to top]](#Documentation)
+[[back to top]](#documentation)
 
 <hr/>
 
@@ -270,7 +270,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 This method replace this kind of legacy code
 
-[[back to top]](#Documentation)
+[[back to top]](#documentation)
 
 <hr/>
 
@@ -302,7 +302,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 This method replace this kind of legacy code
 
-[[back to top]](#Documentation)
+[[back to top]](#documentation)
 
 <hr/>
 
@@ -334,7 +334,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 This method replace this kind of legacy code
 
-[[back to top]](#Documentation)
+[[back to top]](#documentation)
 
 <hr/>
 
@@ -366,7 +366,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 This method replace this kind of legacy code
 
-[[back to top]](#Documentation)
+[[back to top]](#documentation)
 
 <hr/>
 
@@ -388,7 +388,7 @@ This method is useful to handle this situations
 
 This method replace this kind of legacy code
 
-[[back to top]](#Documentation)
+[[back to top]](#documentation)
 
 <hr/>
 

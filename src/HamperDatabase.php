@@ -212,7 +212,7 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
-     * Get value from if record exists.
+     * Get value by key column.
      *
      * Execute a query to check if record with specific key and value exists.
      *

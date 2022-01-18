@@ -35,13 +35,13 @@ try {
             $documentation .= '### ' . $summary . "\n\n";
             $documentation .= $description . "\n\n";
             $documentation .= "#### Usage \n\n```\n" . $usage->getDescription() . "\n```\n\n";
-            $documentation .= "#### Examples\n\n";
+            $documentation .= "#### Examples\n\nThis method is useful to handle this situations";
             foreach ($docBlock->getTagsByName('example') as $tag) {
-                $documentation .= "```php\n<?php\n" . $tag->getDescription() . "\n```\n\n";
+                $documentation .= "```php\n" . $tag->getDescription() . "\n```\n\n";
             }
-            $documentation .= "#### Legacy\n\n";
+            $documentation .= "#### Legacy\n\nThis method replace this kind of legacy code";
             foreach ($docBlock->getTagsByName('legacy') as $tag) {
-                $documentation .= "```php\n<?php\n" . $tag->getDescription() . "\n```\n\n";
+                $documentation .= "```php\n" . $tag->getDescription() . "\n```\n\n";
             }
             $documentation .= '[[back to top]](#Documentation)'."\n\n";
             $documentation .= "<hr/>"."\n\n";

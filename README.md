@@ -37,7 +37,7 @@ $hdb = Hamper::getInstance();
  * [Get a single record](#Get-a-single-record) - `$hdb->fetch(...)`
  * [Get a list of records](#Get-a-list-of-records) - `$hdb->fetchAll(...)`
  * [Get a value from record](#Get-a-value-from-record) - `$hdb->fetchValue(...)`
- * [Get value from if record exists](#Get-value-from-if-record-exists) - `$hdb->value(...)`
+ * [Get value by key column](#Get-value-by-key-column) - `$hdb->value(...)`
  * [Check if record exists](#Check-if-record-exists) - `$hdb->exists(...)`
  * [Insert a record](#Insert-a-record) - `$hdb->insert(...)`
  * [Get last ID](#Get-last-ID) - `$hdb->lastInsertId(...)`
@@ -62,8 +62,7 @@ $hdb->query($sql, $params = [], $options = [])
 
 #### Examples
 
-```php
-<?php
+This method is useful to handle this situations```php
 //
 // Execute simple query
 //
@@ -71,7 +70,6 @@ $hdb->query("SET NAMES utf8");
 ```
 
 ```php
-<?php
 //
 // Execute prepare query
 //
@@ -80,7 +78,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-[[back to top]](#Documentation)
+This method replace this kind of legacy code[[back to top]](#Documentation)
 
 <hr/>
 
@@ -96,8 +94,7 @@ $hdb->fetch($sql, $params = [], $options = [])
 
 #### Examples
 
-```php
-<?php
+This method is useful to handle this situations```php
 //
 // Execute simple query
 //
@@ -105,7 +102,6 @@ $hdb->query("SET NAMES utf8");
 ```
 
 ```php
-<?php
 //
 // Execute prepare query
 //
@@ -114,7 +110,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-[[back to top]](#Documentation)
+This method replace this kind of legacy code[[back to top]](#Documentation)
 
 <hr/>
 
@@ -130,8 +126,7 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
-```php
-<?php
+This method is useful to handle this situations```php
 //
 // Execute simple query
 //
@@ -139,7 +134,6 @@ $hdb->query("SET NAMES utf8");
 ```
 
 ```php
-<?php
 //
 // Execute prepare query
 //
@@ -148,7 +142,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-[[back to top]](#Documentation)
+This method replace this kind of legacy code[[back to top]](#Documentation)
 
 <hr/>
 
@@ -164,15 +158,13 @@ $hdb->fetchValue($sql, $params = [], $options = [])
 
 #### Examples
 
-```php
-<?php
+This method is useful to handle this situations```php
 $crmId = $hdb->fetchValue("SELECT crmid FROM vtiger_crmentity WHERE setype=? AND deleted=0", [$module]);
 ```
 
 #### Legacy
 
-```php
-<?php
+This method replace this kind of legacy code```php
 $adb = \PearDatabase::getInstance();
 $result = $adb->pquery("SELECT tabid FROM vtiger_tab WHERE name=?", [$setype]);
 $tabId = $adb->query_result($result, 0, "tabid");
@@ -182,7 +174,7 @@ $tabId = $adb->query_result($result, 0, "tabid");
 
 <hr/>
 
-### Get value from if record exists
+### Get value by key column
 
 Execute a query to check if record with specific key and value exists.
 
@@ -194,8 +186,7 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
-```php
-<?php
+This method is useful to handle this situations```php
 //
 // Execute simple query
 //
@@ -203,7 +194,6 @@ $hdb->query("SET NAMES utf8");
 ```
 
 ```php
-<?php
 //
 // Execute prepare query
 //
@@ -212,7 +202,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-[[back to top]](#Documentation)
+This method replace this kind of legacy code[[back to top]](#Documentation)
 
 <hr/>
 
@@ -228,8 +218,7 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
-```php
-<?php
+This method is useful to handle this situations```php
 //
 // Execute simple query
 //
@@ -237,7 +226,6 @@ $hdb->query("SET NAMES utf8");
 ```
 
 ```php
-<?php
 //
 // Execute prepare query
 //
@@ -246,7 +234,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-[[back to top]](#Documentation)
+This method replace this kind of legacy code[[back to top]](#Documentation)
 
 <hr/>
 
@@ -262,8 +250,7 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
-```php
-<?php
+This method is useful to handle this situations```php
 //
 // Execute simple query
 //
@@ -271,7 +258,6 @@ $hdb->query("SET NAMES utf8");
 ```
 
 ```php
-<?php
 //
 // Execute prepare query
 //
@@ -280,7 +266,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-[[back to top]](#Documentation)
+This method replace this kind of legacy code[[back to top]](#Documentation)
 
 <hr/>
 
@@ -296,8 +282,7 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
-```php
-<?php
+This method is useful to handle this situations```php
 //
 // Execute simple query
 //
@@ -305,7 +290,6 @@ $hdb->query("SET NAMES utf8");
 ```
 
 ```php
-<?php
 //
 // Execute prepare query
 //
@@ -314,7 +298,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-[[back to top]](#Documentation)
+This method replace this kind of legacy code[[back to top]](#Documentation)
 
 <hr/>
 
@@ -330,8 +314,7 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
-```php
-<?php
+This method is useful to handle this situations```php
 //
 // Execute simple query
 //
@@ -339,7 +322,6 @@ $hdb->query("SET NAMES utf8");
 ```
 
 ```php
-<?php
 //
 // Execute prepare query
 //
@@ -348,7 +330,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-[[back to top]](#Documentation)
+This method replace this kind of legacy code[[back to top]](#Documentation)
 
 <hr/>
 
@@ -364,8 +346,7 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
-```php
-<?php
+This method is useful to handle this situations```php
 //
 // Execute simple query
 //
@@ -373,7 +354,6 @@ $hdb->query("SET NAMES utf8");
 ```
 
 ```php
-<?php
 //
 // Execute prepare query
 //
@@ -382,7 +362,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-[[back to top]](#Documentation)
+This method replace this kind of legacy code[[back to top]](#Documentation)
 
 <hr/>
 
@@ -398,9 +378,9 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
-#### Legacy
+This method is useful to handle this situations#### Legacy
 
-[[back to top]](#Documentation)
+This method replace this kind of legacy code[[back to top]](#Documentation)
 
 <hr/>
 

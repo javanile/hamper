@@ -42,14 +42,10 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * @usage $hdb->query($sql, $params = [], $options = [])
      *
-     * @example //
-     *          // Execute simple query
-     *          //
+     * @example // Execute simple query
      *          $hdb->query("SET NAMES utf8");
      *
-     * @example //
-     *          // Execute prepare query
-     *          //
+     * @example // Execute prepare query
      *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function query($sql, $params = [], $options = [])
@@ -84,14 +80,10 @@ class HamperDatabase extends PearDatabaseDecorator
      *
      * @usage $hdb->fetch($sql, $params = [], $options = [])
      *
-     * @example //
-     *          // Execute simple query
-     *          //
+     * @example // Execute simple query
      *          $hdb->query("SET NAMES utf8");
      *
-     * @example //
-     *          // Execute prepare query
-     *          //
+     * @example // Execute prepare query
      *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
      */
     public function fetch($sql, $params = [], $options = [])

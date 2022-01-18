@@ -31,7 +31,7 @@ try {
             $summary = trim($docBlock->getSummary(), '.');
             $description = $docBlock->getDescription();
             $usage = $docBlock->getTagsByName('usage')[0];
-            $toc .= ' * ['.$summary.'](#'.strtr($summary, ' ', '-').') - `'.$method.'`'."\n";
+            $toc .= ' * ['.$summary.'](#'.strtr($summary, ' ', '-').') - `$hdb->'.$method.'(...)`'."\n";
             $documentation .= '### ' . $summary . "\n\n";
             $documentation .= $description . "\n\n";
             $documentation .= "#### Usage \n\n```\n" . $usage->getDescription() . "\n```\n\n";

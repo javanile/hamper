@@ -33,19 +33,19 @@ $hdb = Hamper::getInstance();
 
 #### The following methods are used to manipulate records into database
 
- * [Execute query](#Execute-query) - `query`
- * [Get a single record](#Get-a-single-record) - `fetch`
- * [Get a list of records](#Get-a-list-of-records) - `fetchAll`
- * [Get a value from record](#Get-a-value-from-record) - `fetchValue`
- * [Get value from if record exists](#Get-value-from-if-record-exists) - `value`
- * [Check if record exists](#Check-if-record-exists) - `exists`
- * [Insert a record](#Insert-a-record) - `insert`
- * [Get last ID](#Get-last-ID) - `lastInsertId`
- * [Update a single record](#Update-a-single-record) - `update`
- * [Delete a single record](#Delete-a-single-record) - `delete`
+ * [Execute query](#Execute-query) - `$hdb->query(...)`
+ * [Get a single record](#Get-a-single-record) - `$hdb->fetch(...)`
+ * [Get a list of records](#Get-a-list-of-records) - `$hdb->fetchAll(...)`
+ * [Get a value from record](#Get-a-value-from-record) - `$hdb->fetchValue(...)`
+ * [Get value from if record exists](#Get-value-from-if-record-exists) - `$hdb->value(...)`
+ * [Check if record exists](#Check-if-record-exists) - `$hdb->exists(...)`
+ * [Insert a record](#Insert-a-record) - `$hdb->insert(...)`
+ * [Get last ID](#Get-last-ID) - `$hdb->lastInsertId(...)`
+ * [Update a single record](#Update-a-single-record) - `$hdb->update(...)`
+ * [Delete a single record](#Delete-a-single-record) - `$hdb->delete(...)`
 #### The following methods are used to manipulate database tables and fields
 
- * [Create new table](#Create-new-table) - `create`
+ * [Create new table](#Create-new-table) - `$hdb->create(...)`
 
 
 <hr/>

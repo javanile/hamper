@@ -35,11 +35,11 @@ try {
             $documentation .= '### ' . $summary . "\n\n";
             $documentation .= $description . "\n\n";
             $documentation .= "#### Usage \n\n```\n" . $usage->getDescription() . "\n```\n\n";
-            $documentation .= "#### Examples\n\nThis method is useful to handle this situations";
+            $documentation .= "#### Examples\n\nThis method is useful to handle this situations\n\n";
             foreach ($docBlock->getTagsByName('example') as $tag) {
                 $documentation .= "```php\n" . $tag->getDescription() . "\n```\n\n";
             }
-            $documentation .= "#### Legacy\n\nThis method replace this kind of legacy code";
+            $documentation .= "#### Legacy\n\nThis method replace this kind of legacy code\n\n";
             foreach ($docBlock->getTagsByName('legacy') as $tag) {
                 $documentation .= "```php\n" . $tag->getDescription() . "\n```\n\n";
             }

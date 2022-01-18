@@ -62,7 +62,9 @@ $hdb->query($sql, $params = [], $options = [])
 
 #### Examples
 
-This method is useful to handle this situations```php
+This method is useful to handle this situations
+
+```php
 //
 // Execute simple query
 //
@@ -78,7 +80,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-This method replace this kind of legacy code[[back to top]](#Documentation)
+This method replace this kind of legacy code
+
+[[back to top]](#Documentation)
 
 <hr/>
 
@@ -94,7 +98,9 @@ $hdb->fetch($sql, $params = [], $options = [])
 
 #### Examples
 
-This method is useful to handle this situations```php
+This method is useful to handle this situations
+
+```php
 //
 // Execute simple query
 //
@@ -110,7 +116,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-This method replace this kind of legacy code[[back to top]](#Documentation)
+This method replace this kind of legacy code
+
+[[back to top]](#Documentation)
 
 <hr/>
 
@@ -126,7 +134,9 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
-This method is useful to handle this situations```php
+This method is useful to handle this situations
+
+```php
 //
 // Execute simple query
 //
@@ -142,7 +152,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-This method replace this kind of legacy code[[back to top]](#Documentation)
+This method replace this kind of legacy code
+
+[[back to top]](#Documentation)
 
 <hr/>
 
@@ -158,13 +170,17 @@ $hdb->fetchValue($sql, $params = [], $options = [])
 
 #### Examples
 
-This method is useful to handle this situations```php
+This method is useful to handle this situations
+
+```php
 $crmId = $hdb->fetchValue("SELECT crmid FROM vtiger_crmentity WHERE setype=? AND deleted=0", [$module]);
 ```
 
 #### Legacy
 
-This method replace this kind of legacy code```php
+This method replace this kind of legacy code
+
+```php
 $adb = \PearDatabase::getInstance();
 $result = $adb->pquery("SELECT tabid FROM vtiger_tab WHERE name=?", [$setype]);
 $tabId = $adb->query_result($result, 0, "tabid");
@@ -186,7 +202,9 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
-This method is useful to handle this situations```php
+This method is useful to handle this situations
+
+```php
 //
 // Execute simple query
 //
@@ -202,7 +220,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-This method replace this kind of legacy code[[back to top]](#Documentation)
+This method replace this kind of legacy code
+
+[[back to top]](#Documentation)
 
 <hr/>
 
@@ -218,7 +238,9 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
-This method is useful to handle this situations```php
+This method is useful to handle this situations
+
+```php
 //
 // Execute simple query
 //
@@ -234,7 +256,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-This method replace this kind of legacy code[[back to top]](#Documentation)
+This method replace this kind of legacy code
+
+[[back to top]](#Documentation)
 
 <hr/>
 
@@ -250,7 +274,9 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
-This method is useful to handle this situations```php
+This method is useful to handle this situations
+
+```php
 //
 // Execute simple query
 //
@@ -266,7 +292,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-This method replace this kind of legacy code[[back to top]](#Documentation)
+This method replace this kind of legacy code
+
+[[back to top]](#Documentation)
 
 <hr/>
 
@@ -282,7 +310,9 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
-This method is useful to handle this situations```php
+This method is useful to handle this situations
+
+```php
 //
 // Execute simple query
 //
@@ -298,7 +328,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-This method replace this kind of legacy code[[back to top]](#Documentation)
+This method replace this kind of legacy code
+
+[[back to top]](#Documentation)
 
 <hr/>
 
@@ -314,7 +346,9 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
-This method is useful to handle this situations```php
+This method is useful to handle this situations
+
+```php
 //
 // Execute simple query
 //
@@ -330,7 +364,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-This method replace this kind of legacy code[[back to top]](#Documentation)
+This method replace this kind of legacy code
+
+[[back to top]](#Documentation)
 
 <hr/>
 
@@ -346,7 +382,9 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
-This method is useful to handle this situations```php
+This method is useful to handle this situations
+
+```php
 //
 // Execute simple query
 //
@@ -362,7 +400,9 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### Legacy
 
-This method replace this kind of legacy code[[back to top]](#Documentation)
+This method replace this kind of legacy code
+
+[[back to top]](#Documentation)
 
 <hr/>
 
@@ -378,9 +418,13 @@ query($sql, $params = [], $options = [])
 
 #### Examples
 
-This method is useful to handle this situations#### Legacy
+This method is useful to handle this situations
 
-This method replace this kind of legacy code[[back to top]](#Documentation)
+#### Legacy
+
+This method replace this kind of legacy code
+
+[[back to top]](#Documentation)
 
 <hr/>
 

@@ -50,7 +50,7 @@ $hdb = Hamper::getInstance();
 
 <hr/>
 
-### ↪️ Execute query
+### 📝 Execute query
 
 > Executes the given parametric query
 

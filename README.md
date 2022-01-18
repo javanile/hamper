@@ -33,24 +33,24 @@ $hdb = Hamper::getInstance();
 
 #### The following methods are used to manipulate records into database
 
- * [Execute query](#Execute-query) - `$hdb->query(...)`
- * [Get a single record](#Get-a-single-record) - `$hdb->fetch(...)`
- * [Get a list of records](#Get-a-list-of-records) - `$hdb->fetchAll(...)`
- * [Get a value from record](#Get-a-value-from-record) - `$hdb->fetchValue(...)`
- * [Get value by key column](#Get-value-by-key-column) - `$hdb->value(...)`
- * [Check if record exists](#Check-if-record-exists) - `$hdb->exists(...)`
- * [Insert a record](#Insert-a-record) - `$hdb->insert(...)`
- * [Get last ID](#Get-last-ID) - `$hdb->lastInsertId(...)`
- * [Update a single record](#Update-a-single-record) - `$hdb->update(...)`
- * [Delete a single record](#Delete-a-single-record) - `$hdb->delete(...)`
+ * [Execute query](#-execute-query) - `$hdb->query(...)`
+ * [Get a single record](#-get-a-single-record) - `$hdb->fetch(...)`
+ * [Get a list of records](#-get-a-list-of-records) - `$hdb->fetchAll(...)`
+ * [Get a value from record](#-get-a-value-from-record) - `$hdb->fetchValue(...)`
+ * [Get value by key column](#-get-value-by-key-column) - `$hdb->value(...)`
+ * [Check if record exists](#-check-if-record-exists) - `$hdb->exists(...)`
+ * [Insert a record](#-insert-a-record) - `$hdb->insert(...)`
+ * [Get last ID](#-get-last-id) - `$hdb->lastInsertId(...)`
+ * [Update a single record](#-update-a-single-record) - `$hdb->update(...)`
+ * [Delete a single record](#-delete-a-single-record) - `$hdb->delete(...)`
 #### The following methods are used to manipulate database tables and fields
 
- * [Create new table](#Create-new-table) - `$hdb->create(...)`
+ * [Create new table](#-create-new-table) - `$hdb->create(...)`
 
 
 <hr/>
 
-### Execute query
+## `¶` Execute query
 
 Executes the given parametric query
 
@@ -82,7 +82,7 @@ This method replace this kind of legacy code
 
 <hr/>
 
-### Get a single record
+## `¶` Get a single record
 
 Fetches the next row from the result set rows by the given parametric query.
 
@@ -114,7 +114,7 @@ This method replace this kind of legacy code
 
 <hr/>
 
-### Get a list of records
+## `¶` Get a list of records
 
 Returns an array containing all of the result set rows by the given parametric query.
 
@@ -146,7 +146,7 @@ This method replace this kind of legacy code
 
 <hr/>
 
-### Get a value from record
+## `¶` Get a value from record
 
 Fetches the next row from the result set rows by the given parametric query.
 
@@ -178,7 +178,7 @@ $tabId = $adb->query_result($result, 0, "tabid");
 
 <hr/>
 
-### Get value by key column
+## `¶` Get value by key column
 
 Execute a query to check if record with specific key and value exists.
 
@@ -210,7 +210,7 @@ This method replace this kind of legacy code
 
 <hr/>
 
-### Check if record exists
+## `¶` Check if record exists
 
 Execute a query to check if record with specific key and value exists.
 
@@ -242,7 +242,7 @@ This method replace this kind of legacy code
 
 <hr/>
 
-### Insert a record
+## `¶` Insert a record
 
 Inserts the given record within the selected table.
 
@@ -274,7 +274,7 @@ This method replace this kind of legacy code
 
 <hr/>
 
-### Get last ID
+## `¶` Get last ID
 
 Return last insert ID value for the selected table.
 
@@ -306,7 +306,7 @@ This method replace this kind of legacy code
 
 <hr/>
 
-### Update a single record
+## `¶` Update a single record
 
 Updates the given record with the given data.
 
@@ -338,7 +338,7 @@ This method replace this kind of legacy code
 
 <hr/>
 
-### Delete a single record
+## `¶` Delete a single record
 
 Deletes the given record within the given table.
 
@@ -370,7 +370,7 @@ This method replace this kind of legacy code
 
 <hr/>
 
-### Create new table
+## `¶` Create new table
 
 
 

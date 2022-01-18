@@ -170,6 +170,100 @@ class HamperDatabase extends PearDatabaseDecorator
     }
 
     /**
+     * Single value by query.
+     *
+     * Fetches the next row from the result set rows by the given parametric query.
+     *
+     * @param string $sql The SQL parametric query to be sent.
+     * @param array $params The parameters in use within the parametric query sent.
+     * @param array $options Any additional option needed.
+     * @return array The result set rows.
+     * @throws HamperException This exception is thrown if problems with the query arise.
+     *
+     * @usage $hdb->fetchValue($sql, $params = [], $options = [])
+     *
+     * @example $crmId = $hdb->fetchValue("SELECT crmid FROM vtiger_crmentity WHERE setype=? AND deleted=0", [$module]);
+     *
+     * @legacy $adb = \PearDatabase::getInstance();
+     *         $result = $adb->pquery("SELECT tabid FROM vtiger_tab WHERE name=?", [$setype]);
+     *         $tabId = $adb->query_result($result, 0, "tabid");
+     */
+    public function fetchValue($sql, $params = [], $options = [])
+    {
+        $handler = OptionsHandlerFactory::createInstance($options);
+        $results = $this->pearDatabase->pquery($sql, $params, $handler->dieOnError, $handler->message);
+
+        if (!$results) {
+            throw HamperException::forSqlError(array(
+                'backtrace' => debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1),
+                'pearDatabase' => $this->pearDatabase,
+                //'sql' => $sql,
+                //'params' => $params,
+                //'dieOnError' => $handler->dieOnError,
+                //'message' => $handler->message
+            ));
+        }
+
+        try {
+            return $this->pearDatabase->query_result_rowdata($results);
+        } catch (\Exception $e) {
+            // The above HamperException prevent this legacy exception
+        }
+    }
+
+    /**
+     * Get value from if record exists.
+     *
+     * Execute a query to check if record with specific key and value exists.
+     *
+     * @param string $table The table's name on which the insert has to be executed.
+     * @param $key
+     * @param $value
+     * @param array $options Any additional option needed.
+     *
+     * @return bool
+     * @throws HamperException
+     *
+     * @usage query($sql, $params = [], $options = [])
+     *
+     * @example //
+     *          // Execute simple query
+     *          //
+     *          $hdb->query("SET NAMES utf8");
+     *
+     * @example //
+     *          // Execute prepare query
+     *          //
+     *          $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
+     */
+    public function value($table, $key, $value, $options=[])
+    {
+        $sql = "SELECT `${key}` FROM `{$table}` WHERE `${key}` = ? LIMIT 1";
+
+        $handler = OptionsHandlerFactory::createInstance($options);
+        $results = $this->pearDatabase->pquery($sql, [$value], $handler->dieOnError, $handler->message);
+
+        if (!$results) {
+            throw HamperException::forSqlError(array(
+                'backtrace' => debug_backtrace(DEBUG_BACKTRACE_PROVIDE_OBJECT, 1),
+                'pearDatabase' => $this->pearDatabase,
+                //'sql' => $sql,
+                //'params' => $params,
+                //'dieOnError' => $handler->dieOnError,
+                //'message' => $handler->message
+            ));
+        }
+
+        try {
+            return boolval($this->pearDatabase->query_result_rowdata($results));
+        } catch (\Exception $e) {
+            // The above HamperException prevent this legacy exception
+        }
+
+        return false;
+    }
+
+    /**
      * Check if record exists.
      *
      * Execute a query to check if record with specific key and value exists.

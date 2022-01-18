@@ -39,6 +39,10 @@ try {
             foreach ($docBlock->getTagsByName('example') as $tag) {
                 $documentation .= "```php\n<?php\n" . $tag->getDescription() . "\n```\n\n";
             }
+            $documentation .= "#### Legacy\n\n";
+            foreach ($docBlock->getTagsByName('legacy') as $tag) {
+                $documentation .= "```php\n<?php\n" . $tag->getDescription() . "\n```\n\n";
+            }
             $documentation .= '[[back to top]](#Documentation)'."\n\n";
             $documentation .= "<hr/>"."\n\n";
         }

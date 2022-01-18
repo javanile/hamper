@@ -36,6 +36,8 @@ $hdb = Hamper::getInstance();
  * [Execute query](#Execute-query)
  * [Get a single record](#Get-a-single-record)
  * [Get a list of records](#Get-a-list-of-records)
+ * [Single value by query](#Single-value-by-query)
+ * [Get value from if record exists](#Get-value-from-if-record-exists)
  * [Check if record exists](#Check-if-record-exists)
  * [Insert a record](#Insert-a-record)
  * [Get last ID](#Get-last-ID)
@@ -76,6 +78,8 @@ $hdb->query("SET NAMES utf8");
 $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
 ```
 
+#### Legacy
+
 [[back to top]](#Documentation)
 
 <hr/>
@@ -107,6 +111,8 @@ $hdb->query("SET NAMES utf8");
 //
 $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
 ```
+
+#### Legacy
 
 [[back to top]](#Documentation)
 
@@ -140,6 +146,72 @@ $hdb->query("SET NAMES utf8");
 $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
 ```
 
+#### Legacy
+
+[[back to top]](#Documentation)
+
+<hr/>
+
+### Single value by query
+
+Fetches the next row from the result set rows by the given parametric query.
+
+#### Usage 
+
+```
+$hdb->fetchValue($sql, $params = [], $options = [])
+```
+
+#### Examples
+
+```php
+<?php
+$crmId = $hdb->fetchValue("SELECT crmid FROM vtiger_crmentity WHERE setype=? AND deleted=0", [$module]);
+```
+
+#### Legacy
+
+```php
+<?php
+$adb = \PearDatabase::getInstance();
+$result = $adb->pquery("SELECT tabid FROM vtiger_tab WHERE name=?", [$setype]);
+$tabId = $adb->query_result($result, 0, "tabid");
+```
+
+[[back to top]](#Documentation)
+
+<hr/>
+
+### Get value from if record exists
+
+Execute a query to check if record with specific key and value exists.
+
+#### Usage 
+
+```
+query($sql, $params = [], $options = [])
+```
+
+#### Examples
+
+```php
+<?php
+//
+// Execute simple query
+//
+$hdb->query("SET NAMES utf8");
+```
+
+```php
+<?php
+//
+// Execute prepare query
+//
+$hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
+```
+
+#### Legacy
+
 [[back to top]](#Documentation)
 
 <hr/>
@@ -171,6 +243,8 @@ $hdb->query("SET NAMES utf8");
 //
 $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
 ```
+
+#### Legacy
 
 [[back to top]](#Documentation)
 
@@ -204,6 +278,8 @@ $hdb->query("SET NAMES utf8");
 $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
 ```
 
+#### Legacy
+
 [[back to top]](#Documentation)
 
 <hr/>
@@ -235,6 +311,8 @@ $hdb->query("SET NAMES utf8");
 //
 $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
 ```
+
+#### Legacy
 
 [[back to top]](#Documentation)
 
@@ -268,6 +346,8 @@ $hdb->query("SET NAMES utf8");
 $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
 ```
 
+#### Legacy
+
 [[back to top]](#Documentation)
 
 <hr/>
@@ -300,6 +380,8 @@ $hdb->query("SET NAMES utf8");
 $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us", "admin"]);
 ```
 
+#### Legacy
+
 [[back to top]](#Documentation)
 
 <hr/>
@@ -315,6 +397,8 @@ query($sql, $params = [], $options = [])
 ```
 
 #### Examples
+
+#### Legacy
 
 [[back to top]](#Documentation)
 

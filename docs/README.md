@@ -32,7 +32,7 @@ $hdb = Hamper::getInstance();
 ## Documentation
 
 
-#### The following methods are used to manipulate records into database
+> The following methods are used to manipulate records into database
 
  * [Execute query](#-execute-query) - `$hdb->query(...)`
  * [Get a single record](#-get-a-single-record) - `$hdb->fetch(...)`
@@ -45,7 +45,7 @@ $hdb = Hamper::getInstance();
  * [Update a single record](#-update-a-single-record) - `$hdb->update(...)`
  * [Delete a single record](#-delete-a-single-record) - `$hdb->delete(...)`
 
-#### The following methods are used to manipulate database tables and fields
+> The following methods are used to manipulate database tables and fields
 
  * [Create new table](#-create-new-table) - `$hdb->create(...)`
 
@@ -420,12 +420,16 @@ If you discover any security related issues, please email bianco@javanile.org in
 
 ## Socialware
 
-We highly appreciate if you create a social post on Twitter with following button: [![Share on Twitter](https://img.shields.io/badge/-share%20on%20twitter-blue?logo=twitter&style=for-the-badge)](https://twitter.com/intent/tweet?text=Hello%20world)
+We highly appreciate if you create a social post on Twitter with following button
+
+[![Share on Twitter](https://img.shields.io/badge/-share%20on%20twitter-blue?logo=twitter&style=for-the-badge)](https://twitter.com/intent/tweet?text=Hello%20world)
 
 ## Credits
 
+This project exists thanks to all the people who contribute.
+
 - [Francesco Bianco](https://github.com/francescobianco)
-- [All Contributors](../../contributors) 
+- [All Contributors](https://github.com/javanile/hamper/graphs/contributors) 
 
 ## Support us
 

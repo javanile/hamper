@@ -20,7 +20,7 @@ try {
         $reflection = new ReflectionClass($class);
         $docBlock = $docBlockFactory->create($reflection->getDocComment());
         $description = trim($docBlock->getDescription(), '.');
-        $toc .= "\n".'#### '.$description."\n\n";
+        $toc .= "\n".'> '.$description."\n\n";
         foreach (get_class_methods($class) as $method) {
             if ($method == '__construct') {
                 continue;

@@ -20,7 +20,7 @@ try {
         $reflection = new ReflectionClass($class);
         $docBlock = $docBlockFactory->create($reflection->getDocComment());
         $description = trim($docBlock->getDescription(), '.');
-        $toc .= "\n\n".'> '.$description."\n\n";
+        $toc .= "\n\n".'#### '.$description."\n\n";
         foreach (get_class_methods($class) as $method) {
             if ($method == '__construct') {
                 continue;
@@ -55,8 +55,8 @@ try {
 $readme = file_get_contents('/app/README.md');
 
 $updatedReadme = preg_replace(
-    '/## All Functions.*## Changelog/s',
-    '## All Functions'."\n\n".$toc."\n\n".$documentation."\n\n".'## Changelog',
+    '/### All Functions.*## Changelog/s',
+    '### All Functions'."\n\n".$toc."\n\n".$documentation."\n\n".'## Changelog',
     $readme
 );
 

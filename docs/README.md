@@ -33,11 +33,11 @@ $hdb = Hamper::getInstance();
 
 TEST
 
-## All Functions
+### All Functions
 
 
 
-> The following methods are used to manipulate records into database
+#### The following methods are used to manipulate records into database
 
  * [Execute query](#-execute-query) - `$hdb->query(...)`
  * [Get a single record](#-get-a-single-record) - `$hdb->fetch(...)`
@@ -51,7 +51,7 @@ TEST
  * [Delete a single record](#-delete-a-single-record) - `$hdb->delete(...)`
 
 
-> The following methods are used to manipulate database tables and fields
+#### The following methods are used to manipulate database tables and fields
 
  * [Create new table](#-create-new-table) - `$hdb->create(...)`
 

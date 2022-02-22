@@ -453,4 +453,4 @@ Does your business depend on our contributions? Reach out us on [Patreon](https:
 
 ## License
 
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/javanile/hamper/blob/main/LICENSE) for more information.

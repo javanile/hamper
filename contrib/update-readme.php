@@ -61,3 +61,4 @@ $updatedReadme = preg_replace(
 );
 
 file_put_contents('/app/README.md', $updatedReadme);
+file_put_contents('/app/docs/README.md', $updatedReadme);

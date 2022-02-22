@@ -39,7 +39,7 @@ try {
             foreach ($docBlock->getTagsByName('example') as $tag) {
                 $documentation .= "```php\n" . $tag->getDescription() . "\n```\n\n";
             }
-            $documentation .= "#### 😿 Legacy\n\nThis method replace this kind of legacy code\n\n";
+            $documentation .= "#### 😿 Legacy\n\nPlease, replace this kind of legacy code with the `\$hdb->{$method}(...)` function\n\n";
             foreach ($docBlock->getTagsByName('legacy') as $tag) {
                 $documentation .= "```php\n" . $tag->getDescription() . "\n```\n\n";
             }

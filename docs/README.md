@@ -90,7 +90,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### 😿 Legacy
 
-This method replace this kind of legacy code
+Please, replace this kind of legacy code with the `$hdb->query(...)` function
 
 [[back to top ☝]](#documentation)
 
@@ -122,7 +122,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### 😿 Legacy
 
-This method replace this kind of legacy code
+Please, replace this kind of legacy code with the `$hdb->fetch(...)` function
 
 [[back to top ☝]](#documentation)
 
@@ -154,7 +154,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### 😿 Legacy
 
-This method replace this kind of legacy code
+Please, replace this kind of legacy code with the `$hdb->fetchAll(...)` function
 
 [[back to top ☝]](#documentation)
 
@@ -180,7 +180,7 @@ $crmId = $hdb->fetchValue("SELECT crmid FROM vtiger_crmentity WHERE setype=? AND
 
 #### 😿 Legacy
 
-This method replace this kind of legacy code
+Please, replace this kind of legacy code with the `$hdb->fetchValue(...)` function
 
 ```php
 $adb = \PearDatabase::getInstance();
@@ -218,7 +218,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### 😿 Legacy
 
-This method replace this kind of legacy code
+Please, replace this kind of legacy code with the `$hdb->value(...)` function
 
 [[back to top ☝]](#documentation)
 
@@ -250,7 +250,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### 😿 Legacy
 
-This method replace this kind of legacy code
+Please, replace this kind of legacy code with the `$hdb->exists(...)` function
 
 [[back to top ☝]](#documentation)
 
@@ -282,7 +282,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### 😿 Legacy
 
-This method replace this kind of legacy code
+Please, replace this kind of legacy code with the `$hdb->insert(...)` function
 
 [[back to top ☝]](#documentation)
 
@@ -314,7 +314,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### 😿 Legacy
 
-This method replace this kind of legacy code
+Please, replace this kind of legacy code with the `$hdb->lastInsertId(...)` function
 
 [[back to top ☝]](#documentation)
 
@@ -346,7 +346,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### 😿 Legacy
 
-This method replace this kind of legacy code
+Please, replace this kind of legacy code with the `$hdb->update(...)` function
 
 [[back to top ☝]](#documentation)
 
@@ -378,7 +378,7 @@ $hdb->query("UPDATE vtiger_users SET language = ? WHERE user_name = ?", ["en_us"
 
 #### 😿 Legacy
 
-This method replace this kind of legacy code
+Please, replace this kind of legacy code with the `$hdb->delete(...)` function
 
 [[back to top ☝]](#documentation)
 
@@ -400,7 +400,7 @@ This method is useful to handle this situations
 
 #### 😿 Legacy
 
-This method replace this kind of legacy code
+Please, replace this kind of legacy code with the `$hdb->create(...)` function
 
 [[back to top ☝]](#documentation)
 

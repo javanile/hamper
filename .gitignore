@@ -2,6 +2,7 @@
 .vscode/
 vendor/
 .env
+.editorconfig
 vtiger.json
 tests/logs/
 !tests/logs/.gitkeep

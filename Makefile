@@ -1,8 +1,11 @@
 
 .PHONY: test
 
-init:
-	echo "version=7.1.0" > .env
+init: editorconfig
+	@echo "version=7.1.0" > .env
+
+editorconfig:
+	@curl -so .editorconfig https://editorconfig.javanile.org/lib/php
 
 install-composer:
 	docker-compose run --rm vtiger curl -sS https://getcomposer.org/installer -o ./contrib/composer-installer.php

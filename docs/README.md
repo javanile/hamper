@@ -420,10 +420,9 @@ If you discover any security related issues, please email bianco@javanile.org in
 
 ## Socialware
 
-We highly appreciate if you create a social post on facebook or twitter with following hashtag:
+We highly appreciate if you create a social post on Twitter with following button:
 
-- [#javanile](#Socialware)
-- [#hamper](#Socialware)
+[![Share on Twitter](https://img.shields.io/badge/-share%20on%20twitter-blue?logo=twitter&style=for-the-badge)](https://twitter.com/intent/tweet?text=Hello%20world)
 
 ## Credits
 

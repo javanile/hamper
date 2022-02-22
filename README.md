@@ -29,14 +29,14 @@ use Javanile\Hamper\Hamper;
 $hdb = Hamper::getInstance();
 ```
 
-## Documentation
+## 📃 Documentation
 
 The documentation lists all the functions you can use to make the code simple and easy to read. 
 The access you have on the data inside the database is based on extraction methods that return `array` 
-and that you can easily manipulate with `foreach`. 
+and that you can easily manipulate with `foreach`.  
 Use the functions well because they allow you to take a single record or a list of records or all the values of a column. 
-Before starting to use it, read the list of functions carefully, and you will automatically use the best one based on the context. 
-For each function you are also presented, the "😿 Legacy", the version of the old style Vtiger code you can replace with Hamper functions, 
+Before starting to use it, read the list of functions carefully, and you will automatically use the best one based on the context.  
+For each function you are also presented, the **"😿 Legacy"**, the version of the old style Vtiger code you can replace with Hamper functions, 
 comparing them, and you will realize how Hamper improves your work.
 
 ### All Functions

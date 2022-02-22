@@ -31,6 +31,10 @@ $hdb = Hamper::getInstance();
 
 ## Documentation
 
+TEST
+
+## All Functions
+
 
 
 > The following methods are used to manipulate records into database

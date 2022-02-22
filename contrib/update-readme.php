@@ -55,8 +55,8 @@ try {
 $readme = file_get_contents('/app/README.md');
 
 $updatedReadme = preg_replace(
-    '/## Documentation.*## Changelog/s',
-    '## Documentation'."\n\n".$toc."\n\n".$documentation."\n\n".'## Changelog',
+    '/## All Functions.*## Changelog/s',
+    '## All Functions'."\n\n".$toc."\n\n".$documentation."\n\n".'## Changelog',
     $readme
 );
 

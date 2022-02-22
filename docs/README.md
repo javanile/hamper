@@ -449,7 +449,7 @@ This project exists thanks to all the people who contribute.
 Javanile is a community project agency based in Sicily, Italy. 
 You'll find an overview of all our projects [on our website](https://www.javanile.org).
 
-Does your business depend on our contributions? Reach out and support us on [Patreon](https://www.patreon.com/javanile). 
+Does your business depend on our contributions? Reach out us on [Patreon](https://www.patreon.com/javanile). 
 
 ## License
 
